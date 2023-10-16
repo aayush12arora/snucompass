@@ -9,13 +9,13 @@ USE squadron;
 -- DROP TABLE IF EXISTS squadron.student;
 -- DROP TABLE IF EXISTS squadron.courses;
 
--- CREATE TABLE squadron.faculty (
---     faculty_id INT NOT NULL AUTO_INCREMENT,
---     faculty_name VARCHAR(50) NOT NULL,
---     faculty_email VARCHAR(50) NOT NULL,
---     faculty_phone VARCHAR(50) NOT NULL,
---     PRIMARY KEY (faculty_id)
--- );
+CREATE TABLE squadron.faculty (
+    faculty_id INT NOT NULL AUTO_INCREMENT,
+    faculty_name VARCHAR(50) NOT NULL,
+    faculty_email VARCHAR(50) NOT NULL,
+    faculty_phone VARCHAR(50) NOT NULL,
+    PRIMARY KEY (faculty_id)
+);
 
 -- CREATE TABLE squadron.department (
 --     department_id INT NOT NULL AUTO_INCREMENT,
