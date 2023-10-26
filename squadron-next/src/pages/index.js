@@ -4,8 +4,9 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomNavbar from './components/CustomNavbar'
-
 import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
+import Layout from './components/Layout';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,15 +23,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <CustomNavbar/>
       <div className={`${styles.main} ${inter.className}`} style={{backgroundImage: "url('/')", backgroundSize: "cover",}}>
         <div className="d-flex flex-column align-items-center justify-content-center h-100">
           <h1 className="text-black">Welcome to SNU'S One stop Destination</h1>
           <h3 className="text-black"> For info related to Minors and Specialization</h3>
-          <div className="mt-3">
-            <Button variant="primary" className="mx-2">Minor</Button>
-            <Button variant="secondary" className="mx-2">Specialization</Button>
-          </div>
+
           <div className="row mt-5">
             <div className="col-md-6">
               <Card>
@@ -40,7 +37,11 @@ export default function Home() {
                     Minors are a great way to explore your interests and expand your knowledge.
                     You can choose a minor from any department except your major department.SNU offers a wide range of minors.
                   </Card.Text>
-                  <Button variant="primary">More info</Button>
+                  
+                  <Button variant="primary">
+                    <Link href="/MinorInfo" target='_blank' style={{color:'white',textDecoration:'none'}}>More info</Link>
+                    
+                    </Button>
                 </Card.Body>
               </Card>
             </div>
