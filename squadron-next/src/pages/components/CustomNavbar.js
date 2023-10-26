@@ -19,7 +19,8 @@ function CustomNavbar() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="#link">About</Nav.Link>
+                        <Nav.Link href="/MinorInfo">Minors</Nav.Link>
+                        <Nav.Link href="/SignIn">Sign in</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

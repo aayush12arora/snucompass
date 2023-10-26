@@ -1,10 +1,21 @@
 -- Path: Script.sql
+-- ALTER TABLE department
+-- ADD FOREIGN KEY (uga_id) REFERENCES faculty(faculty_id);
+-- create table course_offering(
+--     course_id int not null,
+--     dept_id int not null,
+--     semester varchar(10) not null,
+--     year int not null,
+--     primary key(course_id, dept_id, semester, year),
+--     foreign key(course_id) references course(course_id),
+--     foreign key(dept_id) references department(dept_id),
+-- );
 DROP DATABASE IF EXISTS squadron;
 CREATE DATABASE squadron;
 USE squadron;
 -- department table
 create table department(
-    dept_id int not null,
+    dept_id varchar(3) not null,
     dept_name varchar(255) not null,
     dept_phone VARCHAR(10),
     dept_email varchar(20),
@@ -20,8 +31,8 @@ create table student(
     dob date not null,
     net_id varchar(10) not null,
     total_credits int not null,
-    dept_id int not null,
-    minor_dept_id int,
+    dept_id varchar(3) not null,
+    minor_dept_id varchar(3),
     primary key(roll_no),
     foreign key(dept_id) references department(dept_id),
     foreign key(minor_dept_id) references department(dept_id)
@@ -34,7 +45,7 @@ create table course(
     course_credits int not null,
     course_medium varchar(10) not null,
     -- university, swayam
-    dept_id int not null,
+    dept_id varchar(3) not null,
     offered_in_semester varchar(10) not null,
     offered_as_uwe BOOLEAN not null,
     offered_as_me BOOLEAN not null,
@@ -51,7 +62,7 @@ create TABLE faculty(
     -- professor, associate professor, assistant professor
     faculty_res VARCHAR(10) not null,
     -- resident, visiting
-    dept_id int not null,
+    dept_id varchar(3) not null,
     foreign key(dept_id) references department(dept_id),
     primary key(faculty_id)
 );
@@ -93,14 +104,30 @@ create table Course_Pre_Req(
     foreign key(course_id) references course(course_id),
     foreign key(pre_req_course_id) references course(course_id)
 );
+create table Minor_course_Map(
+    dept_id varchar(3) not null,
+    course_id varchar(10) not null,
+    primary key(dept_id, course_id),
+    foreign key(dept_id) references department(dept_id),
+    foreign key(course_id) references course(course_id)
+);
 insert into department
 values(
-        1,
+        "COM",
         "Communication",
         8181818181,
         "Com@snu.edu.in",
         "Minor",
         10
+    );
+insert into department
+values(
+        "CSD",
+        "Computer Science",
+        9191919191,
+        "CSD@snu.edu.in",
+        "Major",
+        11
     );
 insert into course
 values(
@@ -109,19 +136,202 @@ values(
         "A detailed course covering various technical aspects of photography and sound effects",
         4,
         "OFFLINE",
-        1,
+        "COM",
         "BOTH",
         1,
         0
     );
--- ALTER TABLE department
--- ADD FOREIGN KEY (uga_id) REFERENCES faculty(faculty_id);
--- create table course_offering(
---     course_id int not null,
---     dept_id int not null,
---     semester varchar(10) not null,
---     year int not null,
---     primary key(course_id, dept_id, semester, year),
---     foreign key(course_id) references course(course_id),
---     foreign key(dept_id) references department(dept_id),
--- );
+insert into course
+values(
+        "COM192",
+        "Interpreting Cinema",
+        "A detailed course covering various technical aspects of Cinema, screenplay and imagery",
+        4,
+        "OFFLINE",
+        "COM",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values(
+        "COM198",
+        "Cinema between two world wars",
+        "This Optional course is a historical survey of cinema during a time when most
+of its grammar and syntax developed",
+        4,
+        "OFFLINE",
+        "COM",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values(
+        "COM195",
+        "Editing and post production",
+        "Movies lets go",
+        6,
+        "OFFLINE",
+        "COM",
+        "BOTH",
+        1,
+        0
+    );
+-- Insert Computer Science department courses
+insert into course
+values (
+        "CSD101",
+        "Introduction to Computing and Programming (3:0:1)",
+        "An introductory course in programming and computing concepts.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD102",
+        "Data Structures (3:0:1)",
+        "A course on data structures and algorithms.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD211",
+        "Computer Organization (3:1:0)",
+        "An overview of computer organization and architecture.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "MONSOON",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD204",
+        "Operating Systems (3:0:1)",
+        "An introduction to operating systems principles and concepts.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "SPRING",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD105",
+        "Software Engineering (3:0:1)",
+        "Choose one of the following courses: Software Engineering, Computer Networks, Design and Analysis of Computer Algorithms, or Database Systems.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD319",
+        "Design and analysis of algorithms",
+        "A course on the design and analysis of algorithms.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD400",
+        "Theory of Computation",
+        "A course on the theory of computation.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        0,
+        0
+    );
+insert into course
+values (
+        "CSD210",
+        "Introduction to Probability and Statistics",
+        "An introductory course on probability and statistics.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        0,
+        0
+    );
+insert into course
+values (
+        "CSD205",
+        "Discrete Mathematics",
+        "A course on discrete mathematics.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD307",
+        "Software Design Lab",
+        "A lab-based course on software design.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        0,
+        0
+    );
+insert into course
+values (
+        "CSD311",
+        "Artificial Intelligence",
+        "A course on artificial intelligence.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        1,
+        0
+    );
+insert into course
+values (
+        "CSD451",
+        "Applied Cryptography",
+        "A course on applied cryptography.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        0,
+        1
+    );
+insert into course
+values (
+        "CSD456",
+        "Introduction to Machine Learning",
+        "An introduction to machine learning concepts and techniques.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        0,
+        1
+    );
