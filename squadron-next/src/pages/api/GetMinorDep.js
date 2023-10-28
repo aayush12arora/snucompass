@@ -1,13 +1,15 @@
-// 
-
 import db from './db.js';
+import middleware from '@/cors.js';
 
 export default async function(req, res) {
+   
+    
   try {
+    await middleware(req, res); // Add this line to enable CORS
     if (req.method === 'GET') {
       const results = await new Promise((resolve, reject) => {
-        db.query(`SELECT Department.dept_name,minor_description,credits 
-        FROM offered_minors join Department on Department.dept_id=offered_minors.dept_id`, (error, results) => {
+        db.query(`SELECT department.dept_name,minor_description,credits 
+        FROM offered_minors join department on department.dept_id=offered_minors.dept_id`, (error, results) => {
           if (error) {
             reject(error);
           } else {

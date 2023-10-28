@@ -1,9 +1,11 @@
 // 
 
 import db from './db.js';
+import middleware from '@/cors.js';
 
 //extracts the minor department name for a particular student from the database
 export default async function(req, res) {
+  await middleware(req, res);
   try {
     if (req.method === 'GET') {
     const { rollNo } = req.query;
