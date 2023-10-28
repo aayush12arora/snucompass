@@ -122,6 +122,15 @@ values(
     );
 insert into department
 values(
+        "DES",
+        "Design",
+        5151515151,
+        "des@snu.edu.in",
+        "Minor",
+        10
+    );
+insert into department
+values(
         "CSD",
         "Computer Science",
         9191919191,
@@ -129,6 +138,27 @@ values(
         "Major",
         11
     );
+insert into department
+values(
+        "ECE",
+        "Electronics and Communication Engineering",
+        2302020202,
+        "ECE@snu.edu.in",
+        "Major",
+        11
+    );
+insert into course
+values(
+        "DES211",
+        "Introduction to Design",
+        "This course is an introduction to design",
+        4,
+        "OFFLINE",
+        "DES",
+        "BOTH",
+        1,
+        0
+    )
 insert into course
 values(
         "COM199",
@@ -328,6 +358,18 @@ values (
         "CSD456",
         "Introduction to Machine Learning",
         "An introduction to machine learning concepts and techniques.",
+        4,
+        "OFFLINE",
+        "CSD",
+        "BOTH",
+        0,
+        1
+    );
+insert into course
+values (
+        "CSD391",
+        "Image processing",
+        "An introduction to image processing concepts and techniques.",
         4,
         "OFFLINE",
         "CSD",
