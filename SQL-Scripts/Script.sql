@@ -111,6 +111,13 @@ create table Minor_course_Map(
     foreign key(dept_id) references department(dept_id),
     foreign key(course_id) references course(course_id)
 );
+create table offered_minors(
+    dept_id varchar(3) not null,
+    minor_description varchar(10000),
+    credits int not null,
+    primary key(dept_id),
+    foreign key(dept_id) references department(dept_id)
+);
 insert into department
 values(
         "COM",
@@ -158,7 +165,7 @@ values(
         "BOTH",
         1,
         0
-    )
+    );
 insert into course
 values(
         "COM199",
@@ -376,4 +383,28 @@ values (
         "BOTH",
         0,
         1
+    );
+insert into offered_minors
+values(
+        "DES",
+        "In the background of rapidly changing global economy Industrial Design is playing positive role.
+     By introducing Design Minor at SNU for the undergraduate the university will provide excellent opportunity in wider range of 
+     placement for the undergraduate students. Design being an interdisciplinary discipline it provides much broader vision and professional exposure.",
+        20
+    );
+insert into offered_minors
+values(
+        "COM",
+        "The Minor in Communication offered by the Department of Communication is structured in a way that takes the student on the 
+        journey a story takes till it manifests itself on screen; from Ideation and Writing, Basic Photography and Sound Recording.This is divided between six courses, 
+         three compulsory and three optional.The student should complete 18 credits out of a possible 24.",
+        18
+    );
+insert into offered_minors
+values(
+        "CSD",
+        "Undergraduate students of Shiv Nadar University who are not majoring in Computer Science & Engineering (CSE) 
+    have the option to take a Minor in CSE.Students have to acquire a minimum of 19 credits from the minor courses offered by the Department of CSE. For Non Engineering majors, 
+    you have to acquire a minimum of 23 credits.",
+        19
     );

@@ -37,9 +37,12 @@ const SignIn = () => {
         }
     };
 
+    //for testing purposes
     const hardcodedUsers = [
         { username: '2110110410', password: '123' },
         { username: '2110110017', password: '456' },
+        { username: '2110110842', password: '789' },
+        { username: '2110110883', password: '012' },
     ];
 
     return (

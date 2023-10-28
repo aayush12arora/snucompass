@@ -2,64 +2,63 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 
-const MinorInfo = () => {
+export async function getServerSideProps(context) {
+    const { rollNumber } = context.query;
+    // const[deptName,SetDeptName]=useState('');
+    
+    try {
+        const response = await fetch(`http://localhost:3000/api/GetMinorDep`);
+        if (!response.ok) {
+            throw new Error(`Error fetching data: ${response.statusText}`);
+        }
+
+        const MinorData = await response.json();
+        console.log(MinorData)
+        return {
+            props: {
+                MinorData
+            },
+        };
+    } catch (error) {
+        console.error('Error:', error);
+        return {
+            notFound: true, // or handle the error in your preferred way
+        };
+    }
+}
+
+
+const MinorInfo = ({MinorData}) => {
+
+    let minorList = MinorData.map((minor) => {
+        return (
+            <div className="col-md-4">
+                <Card>
+                    <Card.Body>
+                        <Card.Title> {minor.dept_name}</Card.Title>
+                        <Card.Subtitle>Credits: {minor.credits}</Card.Subtitle>
+
+                        {/* <div style={{height: '100px', overflow: 'hidden'}}> */}
+                            <Card.Text>{minor.minor_description}</Card.Text>
+                        {/* </div> */}
+                        <Link href={`/MinorCourses?minor=${minor.minor_id}`}>
+                            <Button variant="primary">
+                                Courses
+                            </Button>
+                        </Link>
+                    </Card.Body>
+                </Card>
+            </div>
+        )
+    });
     return (
         <div>
             <h1>Minors offered at SNU</h1>
             <div style={{rowGap:'20px'}}className="row mb-4">
-                <div className="col-md-4">
-                    <Card>
-                        <Card.Body>
-                            <Card.Title> Minor in Communication</Card.Title>
-                            <Card.Subtitle>Credits: 18</Card.Subtitle>
-                            <Card.Text>Com is a good minor department</Card.Text>
-                            <Button variant="primary">
-                                Courses
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-                <div className="col-md-4">
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Minor in Computer Science</Card.Title>
-                            <Card.Subtitle>Credits: 18</Card.Subtitle>
-                            <Card.Text>CSE is a good minor major department</Card.Text>
-                            <Button variant="primary">
-                                Courses
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-
-                <div className="col-md-4">
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Minor in Dance</Card.Title>
-                            <Card.Subtitle>Credits: 18</Card.Subtitle>
-                            <Card.Text>Dance is a good minor department</Card.Text>
-                            <Button variant="primary">
-                                Courses
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-
-                <div className="col-md-4">
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Minor in Design</Card.Title>
-                            <Card.Subtitle>Credits: 18</Card.Subtitle>
-                            <Card.Text>DES is a good minor department</Card.Text>
-                            <Button variant="primary">
-                                Courses
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </div>
+                {minorList}
             </div>
         </div>
-    )
+    );
 }
 
 export default MinorInfo;

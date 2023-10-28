@@ -29,3 +29,23 @@ call insertIntoStudent(
     "CSD",
     "COM"
 );
+call insertIntoStudent(
+    2110110843,
+    "Rishabh Singh",
+    8.71,
+    "2004-07-19",
+    "rs232",
+    60,
+    "ECE",
+    "COM"
+);
+call insertIntoStudent(
+    2110110883,
+    "Mitaali Singhal",
+    8.6,
+    "2001-11-28",
+    "ms187",
+    60,
+    "CSD",
+    "DES"
+)
