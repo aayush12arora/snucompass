@@ -41,6 +41,7 @@ create TABLE faculty(
     primary key(faculty_id),
 );
 
+
 -- create table course_offering(
 --     course_id int not null,
 --     dept_id int not null,
