@@ -417,3 +417,16 @@ Graphics, Engineering Mechanics/Static and Dynamics and Manufacturing Processes 
 Engineering Sciences categories",
         18
     );
+
+     insert into offered_minors
+values(
+        "PHY",
+        " The physics department offers undergraduate students at SNU an opportunity of obtaining a 
+minor in physics. A minor in physics has two aspects to it. First, it ensures that a student is 
+well versed with the central core of physics, and secondly it will allow the student to learn 
+more advanced aspects of the subject according to his or her interests. A minor in physics 
+will equip a student to engage in challenging multi-disciplinary problems. It will be equally 
+valuable for students seeking employment in industry or finance, where physicist skills of 
+making quantitative models of complex situations are welcomed",
+        18
+    );
