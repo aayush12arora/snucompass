@@ -408,5 +408,12 @@ values(
     you have to acquire a minimum of 23 credits.",
         19
     );
-
-    
+    insert into offered_minors
+values(
+        "MEC",
+        " Minor in Mechanical Engineering would be offered to those Students who 
+have cleared the Physics, and Maths courses from the Basic Sciences and Engineering 
+Graphics, Engineering Mechanics/Static and Dynamics and Manufacturing Processes from 
+Engineering Sciences categories",
+        18
+    );
