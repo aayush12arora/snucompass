@@ -2,8 +2,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CustomNavbar from './components/CustomNavbar'
+import Button from 'react-bootstrap/Button';
+import Link from 'next/link';
+import Layout from './components/Layout';
 
 const inter = Inter({ subsets: ['latin'] })
+
+// const inter = Inter({ subsets: ['latin'] })
+
+import Card from 'react-bootstrap/Card';
 
 export default function Home() {
   return (
@@ -14,101 +23,43 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <div className={`${styles.main} ${inter.className}`} style={{backgroundImage: "url('/')", backgroundSize: "cover",}}>
+        <div className="d-flex flex-column align-items-center justify-content-center h-100">
+          <h1 className="text-black">Welcome to SNU'S One stop Destination</h1>
+          <h3 className="text-black"> For info related to Minors and Specialization</h3>
+
+          <div className="row mt-5">
+            <div className="col-md-6">
+              <Card>
+                <Card.Body>
+                  <Card.Title>Minors</Card.Title>
+                  <Card.Text>
+                    Minors are a great way to explore your interests and expand your knowledge.
+                    You can choose a minor from any department except your major department.SNU offers a wide range of minors.
+                  </Card.Text>
+                  
+                  <Button variant="primary">
+                    <Link href="/MinorInfo" target='_blank' style={{color:'white',textDecoration:'none'}}>More info</Link>
+                    
+                    </Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-6">
+              <Card>
+                <Card.Body>
+                  <Card.Title>Specialization</Card.Title>
+                  <Card.Text>
+                    Some courses from your core department are offered as major electives. You can choose to specialize in a particular field by taking these courses.
+                    For example a Computer Science Student can specialize in AI/ML or CyberSecurity.
+                  </Card.Text>
+                  <Button variant="primary">More info</Button>
+                </Card.Body>
+              </Card>
+            </div>
           </div>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      </div>
     </>
   )
 }
