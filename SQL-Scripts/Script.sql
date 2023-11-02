@@ -144,6 +144,23 @@ values(
         "CSD@snu.edu.in",
         "Major",
         11
+    );insert into department
+values(
+        "MEC",
+        "Mechanical ",
+        9191919191,
+        "MEC@snu.edu.in",
+        "Major",
+        11
+    );
+    insert into department
+values(
+        "PHY",
+        "Physics",
+        9191919191,
+        "PHY@snu.edu.in",
+        "Major",
+        11
     );
 insert into department
 values(
