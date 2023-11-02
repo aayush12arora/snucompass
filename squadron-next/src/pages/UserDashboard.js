@@ -11,7 +11,7 @@ export async function getServerSideProps(context) {
     // const[deptName,SetDeptName]=useState('');
     
     try {
-        const response = await fetch(`http://localhost:3000/api/GetStudentData?rollNo=${rollNumber}`);
+        const response = await fetch(`https://sqaudron.vercel.app/api/GetStudentData?rollNo=${rollNumber}`);
         if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
         }
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 
         const studentData = await response.json();
         console.log(studentData)
-        const response2 = await fetch(`http://localhost:3000/api/GetEnrolledMinorCourses?dept="${studentData[0].dept_id}"&rollNo=${rollNumber}`);
+        const response2 = await fetch(`https://sqaudron.vercel.app/api/GetEnrolledMinorCourses?dept="${studentData[0].dept_id}"&rollNo=${rollNumber}`);
         if (!response2.ok) {
             throw new Error(`Error fetching data: ${response2.statusText}`);
         }

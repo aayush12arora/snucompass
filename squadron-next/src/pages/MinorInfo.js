@@ -7,7 +7,7 @@ export async function getServerSideProps(context) {
     // const[deptName,SetDeptName]=useState('');
     
     try {
-        const response = await fetch(`http://localhost:3000/api/GetMinorDep`);
+        const response = await fetch(`https://sqaudron.vercel.app/api/GetMinorDep`);
         if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
         }

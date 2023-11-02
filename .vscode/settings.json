@@ -11,7 +11,12 @@
             "driver": "MySQL",
             "name": "squadron",
             "database": "mysql",
+<<<<<<< HEAD
+            "username": "root",
+            "askForPassword": true
+=======
             "username": "root"
+>>>>>>> 45d16a7252a13fe23e0325ae7164d6fe0bd5e14b
         }
     ]
 }
