@@ -408,7 +408,26 @@ values(
     you have to acquire a minimum of 23 credits.",
         19
     );
-    insert into offered_minors
+use squadron;
+insert into department
+values(
+        "MEC",
+        "Mechanical Engineering",
+        9191919191,
+        "mec@snu.edu.in",
+        "Major",
+        11
+    );
+insert into department
+values(
+        "PHY",
+        "Physics",
+        9191919191,
+        "phy@snu.edu.in",
+        "Major",
+        11
+    );
+insert into offered_minors
 values(
         "MEC",
         " Minor in Mechanical Engineering would be offered to those Students who 
@@ -417,8 +436,7 @@ Graphics, Engineering Mechanics/Static and Dynamics and Manufacturing Processes 
 Engineering Sciences categories",
         18
     );
-
-     insert into offered_minors
+insert into offered_minors
 values(
         "PHY",
         " The physics department offers undergraduate students at SNU an opportunity of obtaining a 
