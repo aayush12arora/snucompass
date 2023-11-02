@@ -18,3 +18,9 @@ StoredProcedures.sql
 InsertStudents.sql
 InsertNewCourses.sql
 EnrollStudents.sql
+
+
+
+the following scripts are involved in data insertion:
+mitaaliscript
+RahulScript

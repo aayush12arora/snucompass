@@ -1,4 +1,4 @@
-use squadron;
+use sql12657494;
 call insertIntoCourse(
     "DES102",
     "Elements and Principles of Visual Design",
@@ -67,8 +67,7 @@ Involved methodology, different approaches as well as salient achievements in th
 call insertIntoCourse(
     "DES131",
     " Introduction To Ergonomics",
-    "The course is intended as an introduction to the domain of Ergonomics – the science of man – machine
-     interface and its importance to the Design. ",
+    "The course is intended as an introduction to the domain of Ergonomics – the science of man – machine interface and its importance to the Design. ",
     4,
     "Offline",
     "DES",
@@ -134,7 +133,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES504",
-    " Human Factors Engineering",
+    "Human Factors Engineering",
     "The course intends in developing understanding of human Factors Engineering ",
     4,
     "Offline",
@@ -145,7 +144,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES505",
-    " Electronics and Software for Designers",
+    "Electronics and Software for Designers",
     "The course intends in developing understanding of electronics and software for designers ",
     2,
     "Offline",
@@ -156,7 +155,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES506",
-    " Art and Craft Culture of India",
+    "Art and Craft Culture of India",
     "The course intends in getting information on art and craft culture of India ",
     3,
     "Offline",
@@ -167,7 +166,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES507",
-    "  Design Semantics and Communication Theory",
+    "Design Semantics and Communication Theory",
     "The course intends in getting information on design semantics and communication theory ",
     3,
     "Offline",
@@ -178,7 +177,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES508",
-    " Semester Research Project",
+    "Semester Research Project",
     "The course focuses on a research project in semester ",
     4,
     "Offline",
@@ -189,7 +188,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES509",
-    " Technical Writing and Creative Communication",
+    "Technical Writing and Creative Communication",
     "The course focuses on a research project in semester ",
     2,
     "Offline",
@@ -200,7 +199,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES510",
-    " Design Thinking",
+    "Design Thinking",
     "The course focuses on design thinking ",
     2,
     "Offline",
@@ -211,7 +210,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES511",
-    " Master's Thesis Project",
+    "Master's Thesis Project",
     "This is first phase of the year-long Master’s Thesis Project that can be chosen by students
 based on their area of interest from any discipline/domains of Design as a field of study.  ",
     4,
@@ -223,7 +222,7 @@ based on their area of interest from any discipline/domains of Design as a field
 );
 call insertIntoCourse(
     "DES512",
-    " Master's Thesis Project 2",
+    "Master's Thesis Project 2",
     "This is second phase of the year-long Master’s Thesis Project that can be chosen by students
 based on their area of interest from any discipline/domains of Design as a field of study.  ",
     8,
@@ -235,7 +234,7 @@ based on their area of interest from any discipline/domains of Design as a field
 );
 call insertIntoCourse(
     "DES521",
-    " Principles of Form",
+    "Principles of Form",
     "The course focuses on principles of form.",
     4,
     "Offline",
@@ -246,7 +245,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES522",
-    " Research Methods in Design",
+    "Research Methods in Design",
     "The course focuses on research methods in design.",
     4,
     "Offline",
@@ -257,7 +256,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES523",
-    " System Analysis and Information Design",
+    "System Analysis and Information Design",
     "The course focuses on system analysis and information Design.",
     4,
     "Offline",
@@ -268,7 +267,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES525",
-    " Design Management and Professional Practices",
+    "Design Management and Professional Practices",
     "The course focuses on design management and Professional Practices",
     4,
     "Offline",
@@ -292,7 +291,7 @@ Video display units, Programming toolkits, Sensor based context aware interactio
 );
 call insertIntoCourse(
     "DES527",
-    " Product Styling and Modelling",
+    "Product Styling and Modelling",
     "The course is intended as an
 introduction to the domain of Product styling in the Product Design.
 Content- The course intends to develop understanding about the minute detailing of a
@@ -308,7 +307,7 @@ product)",
 );
 call insertIntoCourse(
     "DES529",
-    " Visual Design",
+    "Visual Design",
     "The course focuses on design management and Professional Practices",
     4,
     "Offline",
@@ -319,7 +318,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES531",
-    " Design for Sustainability",
+    "Design for Sustainability",
     "The course focuses on design for sustainability",
     4,
     "Offline",
@@ -330,7 +329,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES532",
-    " Information Systems, Architecture, and Cognitive Psychology",
+    "Information Systems, Architecture, and Cognitive Psychology",
     "The course focuses on information Systems, architecture, and cognitive Psychology",
     4,
     "Offline",
@@ -341,7 +340,7 @@ call insertIntoCourse(
 );
 call insertIntoCourse(
     "DES533",
-    " Design Virtual Reality",
+    "Design Virtual Reality",
     "The course is a project-based course that includes assignments aligning with the
 theories to develop a virtual reality experience in practice.",
     4,
@@ -354,8 +353,7 @@ theories to develop a virtual reality experience in practice.",
 call insertIntoCourse(
     "DES534",
     "UX Research Methods",
-    "This course builds on DES522: Research Methods in Design and focuses on the contemporary
-     methods of UX Research.",
+    "This course builds on DES522: Research Methods in Design and focuses on the contemporary methods of UX Research.",
     4,
     "Offline",
     "DES",
@@ -382,9 +380,7 @@ call insertIntoCourse(
     "Communicating the Environment",
     "Communicating the Environment-Students in this class will learn how to contextualize, 
     critically analyse and formulate narratives on a range of environmental issues. 
-    They will learn the skills and techniques they can apply to reporting on environmental issues
-     generally. And they will learn how to think about and explore the many ways in which the environment
-      intersects with nearly every aspect of our society, including health, psychology, architecture and urban design.",
+    They will learn the skills and techniques they can apply to reporting on environmental issues generally. And they will learn how to think about and explore the many ways in which the environment intersects with nearly every aspect of our society, including health, psychology, architecture and urban design.",
     4,
     "Offline",
     "COM",
@@ -395,8 +391,7 @@ call insertIntoCourse(
 call insertIntoCourse(
     "COM193",
     "Sound Sense",
-    "This course will usher you into the enigmatic yet magnificent world of sound. Throughout the course our practice will be to thoughtfully consider what sound is and how we sense it and to investigate into the science behind auditory perception of human beings with an objective of knowing how sound interacts with 
-    the visual in audio-visual medium and how sound design conveys meaning.",
+    "This course will usher you into the enigmatic yet magnificent world of sound. Throughout the course our practice will be to thoughtfully consider what sound is and how we sense it and to investigate into the science behind auditory perception of human beings with an objective of knowing how sound interacts with the visual in audio-visual medium and how sound design conveys meaning.",
     4,
     "Offline",
     "COM",
