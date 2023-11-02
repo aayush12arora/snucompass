@@ -1,5 +1,4 @@
 use squadron;
-
 call insertIntoCourse(
     "DES102",
     "Elements and Principles of Visual Design",
@@ -25,7 +24,6 @@ express ideas visually, communicate design concepts, and enhance their presentat
     1,
     0
 );
-
 call insertIntoCourse(
     "DES104",
     " Society, Culture and Design",
@@ -54,7 +52,6 @@ characteristics. ",
     1,
     0
 );
-
 call insertIntoCourse(
     "DES111",
     " Introduction to Product Design",
@@ -157,7 +154,6 @@ call insertIntoCourse(
     1,
     0
 );
-
 call insertIntoCourse(
     "DES506",
     " Art and Craft Culture of India",
@@ -191,7 +187,6 @@ call insertIntoCourse(
     1,
     0
 );
-
 call insertIntoCourse(
     "DES509",
     " Technical Writing and Creative Communication",
@@ -368,7 +363,6 @@ call insertIntoCourse(
     1,
     0
 );
-
 call insertIntoCourse(
     "DES535",
     "Sequential Narrative",
@@ -382,9 +376,7 @@ visualization in a time-based medium.",
     1,
     0
 );
-
---Com courses
-
+-- Com courses
 call insertIntoCourse(
     "COM191",
     "Communicating the Environment",
@@ -412,91 +404,3 @@ call insertIntoCourse(
     1,
     0
 );
-call insertIntoCourse(
-    "COM193",
-    "Sound Sense",
-    "This course will usher you into the enigmatic yet magnificent world of sound. Throughout the course our practice will be to thoughtfully consider what sound is and how we sense it and to investigate into the science behind auditory perception of human beings with an objective of knowing how sound interacts with 
-    the visual in audio-visual medium and how sound design conveys meaning.",
-    4,
-    "Offline",
-    "COM",
-    "Both",
-    1,
-    0
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
-
-
-

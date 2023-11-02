@@ -49,3 +49,6 @@ call insertFaculty(
     "No",
     "COM"
 );
+update faculty
+set dept_id = "DES"
+where faculty_id = 3;

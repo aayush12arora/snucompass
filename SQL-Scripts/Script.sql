@@ -144,7 +144,8 @@ values(
         "CSD@snu.edu.in",
         "Major",
         11
-    );insert into department
+    );
+insert into department
 values(
         "MEC",
         "Mechanical ",
@@ -153,7 +154,7 @@ values(
         "Major",
         11
     );
-    insert into department
+insert into department
 values(
         "PHY",
         "Physics",
@@ -425,25 +426,25 @@ values(
     you have to acquire a minimum of 23 credits.",
         19
     );
-use squadron;
-insert into department
-values(
-        "MEC",
-        "Mechanical Engineering",
-        9191919191,
-        "mec@snu.edu.in",
-        "Major",
-        11
-    );
-insert into department
-values(
-        "PHY",
-        "Physics",
-        9191919191,
-        "phy@snu.edu.in",
-        "Major",
-        11
-    );
+-- use squadron;
+-- insert into department
+-- values(
+--         "MEC",
+--         "Mechanical Engineering",
+--         9191919191,
+--         "mec@snu.edu.in",
+--         "Major",
+--         11
+--     );
+-- insert into department
+-- values(
+--         "PHY",
+--         "Physics",
+--         9191919191,
+--         "phy@snu.edu.in",
+--         "Major",
+--         11
+--     );
 insert into offered_minors
 values(
         "MEC",

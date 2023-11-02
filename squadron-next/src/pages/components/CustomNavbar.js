@@ -21,6 +21,7 @@ function CustomNavbar() {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/MinorInfo">Minors</Nav.Link>
                         <Nav.Link href="/SignIn">Sign in</Nav.Link>
+                        <Nav.Link href="/FacSignIn">Faculty Page</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
