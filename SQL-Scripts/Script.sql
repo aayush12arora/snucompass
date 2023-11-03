@@ -78,7 +78,7 @@ create Table Student_Course_Map(
     foreign key(roll_no) references student(roll_no),
     foreign key(course_id) references course(course_id)
 );
--- student_completed_course table
+-- Student_Completed_Course table
 create table Student_Completed_Course(
     roll_no int not null,
     course_id varchar(10) not null,

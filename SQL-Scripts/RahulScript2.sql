@@ -25,19 +25,19 @@ call insertIntoStudent(
     "CSD"
 );
 -- use squadron;
-alter table student_completed_course
+alter table Student_Completed_Course
 add Grade varchar(2);
-update student_completed_course
+update Student_Completed_Course
 set Grade = "A";
 use squadron;
-insert into student_completed_course
+insert into Student_Completed_Course
 values(
         2110110414,
         "CSD101",
         "M2023",
         "A-"
     );
-insert into student_completed_course
+insert into Student_Completed_Course
 values(
         2110110414,
         "CSD102",

@@ -15,7 +15,7 @@ call enrollStudent(2110110842, "CSD102", "M2023", "CORE");
 call enrollStudent(2110110842, "CSD205", "M2023", "CORE");
 call enrollStudent(2110110842, "CSD210", "M2023", "CORE");
 call enrollStudent(2110110842, "COM192", "M2023", "UWE");
-insert into student_completed_course
+insert into Student_Completed_Course
 values(2110110410, "COM199", "S2022");
-insert into student_completed_course
+insert into Student_Completed_Course
 values(2110110410, "CSD101", "M2022");

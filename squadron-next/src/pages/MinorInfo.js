@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Link from 'next/link';
 
+//here need to 
 export async function getServerSideProps(context) {
     const { rollNumber } = context.query;
     // const[deptName,SetDeptName]=useState('');
