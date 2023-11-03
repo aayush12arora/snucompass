@@ -52,28 +52,3 @@ call insertFaculty(
 update faculty
 set dept_id = "DES"
 where faculty_id = 3;
--- 3/11/2023
--- need to enroll students 
-use squadron;
-use squadron;
-call insertIntoStudent(
-    2110110414,
-    "Rohit Tripathi",
-    8.94,
-    "2002-01-30",
-    "rt187",
-    60,
-    "ECE",
-    "CSD"
-);
-use squadron;
-call insertIntoStudent(
-    2110110191,
-    "Devesh Sharma",
-    8.77,
-    "2002-10-28",
-    "ds766",
-    60,
-    "MEC",
-    "CSD"
-);
