@@ -2,34 +2,6 @@
 -- need to enroll students 
 -- use squadron;
 use sql12657494;
--- use squadron;
-call insertIntoStudent(
-    2110110414,
-    "Rohit Tripathi",
-    8.94,
-    "2002-01-30",
-    "rt187",
-    60,
-    "ECE",
-    "CSD"
-);
--- use squadron;
-call insertIntoStudent(
-    2110110191,
-    "Devesh Sharma",
-    8.77,
-    "2002-10-28",
-    "ds766",
-    60,
-    "MEC",
-    "CSD"
-);
--- use squadron;
-alter table Student_Completed_Course
-add Grade varchar(2);
-update Student_Completed_Course
-set Grade = "A";
-use squadron;
 insert into Student_Completed_Course
 values(
         2110110414,
@@ -43,6 +15,13 @@ values(
         "CSD102",
         "M2023",
         "B"
+    );
+insert into Student_Completed_Course
+values(
+        2110110410,
+        "COM199",
+        "M2022",
+        "B-"
     );
 UPDATE course
 SET course_name = SUBSTRING_INDEX(course_name, ' (', 1)
