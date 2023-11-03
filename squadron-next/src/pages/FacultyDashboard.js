@@ -87,9 +87,9 @@ const FacultyDashboard = ({studMinorData}) => {
             <div>
                 <h1 style={{ textAlign: 'center' }}>Teacher Dashboard</h1>
 
-                <h2 style={{ textAlign: 'center' }}> Welcome {studMinorData[0].faculty_name}</h2>
+                <h2 style={{ textAlign: 'center' }}> Welcome {studMinorData[0]?.faculty_name}</h2>
 
-                <h3 style={{ textAlign: 'center' }}> Students currently pursuing minor in {studMinorData[0].dept_id}</h3>
+                <h3 style={{ textAlign: 'center' }}> Students currently pursuing minor in {studMinorData[0]?.dept_id}</h3>
 
 
                 <ListGroup>

@@ -7,12 +7,12 @@ function StudentDetailsModal({ student, show, onHide }) {
   const [isFetchingData, setIsFetchingData] = useState(false);
 
   useEffect(() => {
-    if (show && student && student.roll_no) {
+    if (show && student && student?.roll_no) {
       setIsFetchingData(true);
         console.log("hai")
       const fetchCompletedCourses = async () => {
         try {
-          const response = await fetch(`https://sqaudron.vercel.app/api/GetCompletedCourses?rollNo=${student.roll_no}&minorDep="${student.dept_id}"`);
+          const response = await fetch(`https://sqaudron.vercel.app/api/GetCompletedCourses?rollNo=${student?.roll_no}&minorDep="${student?.dept_id}"`);
           if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
           }
@@ -32,7 +32,7 @@ function StudentDetailsModal({ student, show, onHide }) {
   return (
     <Modal show={show} onHide={onHide} size="lg" centered>
       <Modal.Header closeButton>
-        <Modal.Title>{student.name}'s Details</Modal.Title>
+        <Modal.Title>{student?.name}'s Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <h4>Completed Courses:</h4>
@@ -40,8 +40,8 @@ function StudentDetailsModal({ student, show, onHide }) {
           <p>Loading...</p>
         ) : (
           <ul>
-            {completedCourses.map((course) => (
-              <li key={course.course_id}>{course.course_name}</li>
+            {completedCourses?.map((course) => (
+              <li key={course?.course_id}>{course?.course_name}</li>
             ))}
           </ul>
         )}
