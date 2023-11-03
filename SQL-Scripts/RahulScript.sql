@@ -1,4 +1,4 @@
-use squadron;
+use sql12657494;
 -- need a trigger that whenever a row is deleted from student_course_map it goes to the completed course automatically
 -- alter table completed course that shows grade
 -- when uploading file you need to add delimiter vscode handles automatically
