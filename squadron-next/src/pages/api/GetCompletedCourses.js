@@ -1,15 +1,20 @@
+// 
+
 import db from './db.js';
 import middleware from '@/cors.js';
-//add dept_id to select query to fetch stuff later
+
+//extracts the minor department name for a particular student from the database
 export default async function(req, res) {
-   
-    
+  await middleware(req, res);
   try {
-    await middleware(req, res); // Add this line to enable CORS
     if (req.method === 'GET') {
+    const { rollNo,minorDep} = req.query;
       const results = await new Promise((resolve, reject) => {
-        db.query(`SELECT department.dept_name,minor_description,credits 
-        FROM offered_minors join department on department.dept_id=offered_minors.dept_id`, (error, results) => {
+        db.query(`select course.course_id,course_name,semester from student_completed_course
+        join course on course.course_id=student_completed_course.course_id
+        join student on student.roll_no=student_completed_course.roll_no
+         where student.roll_no=${rollNo} and left(course.course_id,3)=${minorDep};
+        `, (error, results) => {
           if (error) {
             reject(error);
           } else {
@@ -17,7 +22,7 @@ export default async function(req, res) {
           }
         });
       });
-      
+      console.log(results)
       res.status(200).json(results);
     } else {
       res.status(405).json({ error: 'Method not allowed' });

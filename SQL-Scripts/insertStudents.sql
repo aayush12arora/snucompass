@@ -48,4 +48,4 @@ call insertIntoStudent(
     60,
     "CSD",
     "DES"
-)
+);
