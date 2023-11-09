@@ -1,4 +1,14 @@
-"# Squadron" 
+# SNUCOMPASS: SNU College Options and Major Preferences Assessment Support System 😊
+# Team: Squadron
+
+Team Members:
+<p>-- Aayush Arora</p>
+<p>-- Punyam Singh</p>
+<p>-- Rahul Jayaram</p>
+<p>-- Mitaali Singhal</p>
+
+
+---
 Database project
 
 
