@@ -1,0 +1,31 @@
+digraph ER {
+  node [shape=record, style=filled, fillcolor=lightblue];
+
+  Department [label="{dept_id|dept_name|dept_phone|dept_email|dept_type|uga_id}"];
+  Student [label="{roll_no|name|cgpa|dob|net_id|total_credits|dept_id|minor_dept_id}"];
+  Course [label="{course_id|course_name|course_desc|course_credits|course_medium|dept_id|offered_in_semester|offered_as_uwe|offered_as_me}"];
+  Faculty [label="{faculty_id|faculty_name|faculty_email|faculty_phone|faculty_type|faculty_res|dept_id}"];
+  Student_Course_Map [label="{roll_no|course_id|semester|course_type}"];
+  Student_Completed_Course [label="{roll_no|course_id|semester}"];
+  Course_Faculty_Map [label="{course_id|faculty_id}"];
+  Course_Pre_Req [label="{course_id|pre_req_course_id}"];
+  Minor_course_Map [label="{dept_id|course_id}"];
+  Offered_Minors [label="{dept_id|minor_description|credits}"];
+
+  Department -> Faculty [label="uga_id"];
+  Student -> Department [label="dept_id"];
+  Student -> Department [label="minor_dept_id"];
+  Course -> Department [label="dept_id"];
+  Faculty -> Department [label="dept_id"];
+  Student_Course_Map -> Student [label="roll_no"];
+  Student_Course_Map -> Course [label="course_id"];
+  Student_Completed_Course -> Student [label="roll_no"];
+  Student_Completed_Course -> Course [label="course_id"];
+  Course_Faculty_Map -> Course [label="course_id"];
+  Course_Faculty_Map -> Faculty [label="faculty_id"];
+  Course_Pre_Req -> Course [label="course_id"];
+  Course_Pre_Req -> Course [label="pre_req_course_id"];
+  Minor_course_Map -> Department [label="dept_id"];
+  Minor_course_Map -> Course [label="course_id"];
+  Offered_Minors -> Department [label="dept_id"];
+}
