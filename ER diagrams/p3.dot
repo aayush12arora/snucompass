@@ -1,0 +1,104 @@
+digraph ER {
+  // Department table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>department</b></td></tr>
+      <tr><td PORT="dept_id" bgcolor="#EEEEEE" align="left">dept_id</td><td align="right" bgcolor="#EEEEEE"><font point-size="10">VARCHAR(3) not null</font></td></tr>
+      <tr><td PORT="dept_name" align="left">dept_name</td><td align="right"><font point-size="10">VARCHAR(255) not null</font></td></tr>
+      <tr><td PORT="dept_phone" bgcolor="#EEEEEE" align="left">dept_phone</td><td align="right" bgcolor="#EEEEEE"><font point-size="10">VARCHAR(10)</font></td></tr>
+      <tr><td PORT="dept_email" align="left">dept_email</td><td align="right"><font point-size="10">VARCHAR(20)</font></td></tr>
+      <tr><td PORT="dept_type" bgcolor="#EEEEEE" align="left">dept_type</td><td align="right" bgcolor="#EEEEEE"><font point-size="10">VARCHAR(10)</font></td></tr>
+      <tr><td PORT="uga_id" align="left">uga_id</td><td align="right"><font point-size="10">INT not null</font></td></tr>
+    </table>
+  >];
+
+  // Student table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>student</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Course table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>course</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Faculty table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>faculty</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Student_Course_Map table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>Student_Course_Map</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Student_Completed_Course table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>Student_Completed_Course</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Course_Faculty_Map table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>Course_Faculty_Map</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Course_Pre_Req table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>Course_Pre_Req</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Minor_course_Map table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>Minor_course_Map</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Offered_Minors table
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>Offered_Minors</b></td></tr>
+      <!-- Add other attributes -->
+    </table>
+  >];
+
+  // Relationships
+  department -> faculty [label="uga_id"];
+  student -> department [label="dept_id"];
+  student -> department [label="minor_dept_id"];
+  course -> department [label="dept_id"];
+  faculty -> department [label="dept_id"];
+  student_course_map -> student [label="roll_no"];
+  student_course_map -> course [label="course_id"];
+  student_completed_course -> student [label="roll_no"];
+  student_completed_course -> course [label="course_id"];
+  course_faculty_map -> course [label="course_id"];
+  course_faculty_map -> faculty [label="faculty_id"];
+  course_pre_req -> course [label="course_id"];
+  course_pre_req -> course [label="pre_req_course_id"];
+  minor_course_map -> department [label="dept_id"];
+  minor_course_map -> course [label="course_id"];
+  offered_minors -> department [label="dept_id"];
+}

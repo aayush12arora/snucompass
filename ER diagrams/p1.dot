@@ -1,5 +1,5 @@
 digraph ER {
-  node [shape=record, style=filled, fillcolor=lightblue];
+  node [shape=box, style=filled, fillcolor=lightblue];
 
   Department [label="{dept_id|dept_name|dept_phone|dept_email|dept_type|uga_id}"];
   Student [label="{roll_no|name|cgpa|dob|net_id|total_credits|dept_id|minor_dept_id}"];

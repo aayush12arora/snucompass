@@ -1,0 +1,223 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1308pt" height="1041pt" viewBox="0.00 0.00 1307.58 1040.62">
+<g id="graph0" class="graph" transform="translate(129.75251672000343,939.3098660268099) scale(0.8091617338590485)" data-name="ER">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-1036.62 1303.58,-1036.62 1303.58,4 -4,4"/>
+<!-- Department -->
+<g id="node1" class="node" pointer-events="visible" data-name="Department">
+
+<polygon fill="#6495ed" stroke="none" points="750.29,-1008.62 750.29,-1028.62 822.29,-1028.62 822.29,-1008.62 750.29,-1008.62"/>
+<polygon fill="none" stroke="black" points="750.29,-1008.62 750.29,-1028.62 822.29,-1028.62 822.29,-1008.62 750.29,-1008.62"/>
+<text text-anchor="start" x="752.95" y="-1015.82" font-family="Arial" font-weight="bold" font-size="12.00">Department</text>
+<polygon fill="none" stroke="black" points="750.29,-988.62 750.29,-1008.62 822.29,-1008.62 822.29,-988.62 750.29,-988.62"/>
+<text text-anchor="start" x="766.6" y="-995.82" font-family="Arial" text-decoration="underline" font-size="12.00">dept_id</text>
+<polygon fill="none" stroke="black" points="750.29,-968.62 750.29,-988.62 822.29,-988.62 822.29,-968.62 750.29,-968.62"/>
+<text text-anchor="start" x="756.27" y="-974.82" font-family="Arial" font-size="12.00">dept_name</text>
+<polygon fill="none" stroke="black" points="750.29,-948.62 750.29,-968.62 822.29,-968.62 822.29,-948.62 750.29,-948.62"/>
+<text text-anchor="start" x="754.59" y="-954.82" font-family="Arial" font-size="12.00">dept_phone</text>
+<polygon fill="none" stroke="black" points="750.29,-928.62 750.29,-948.62 822.29,-948.62 822.29,-928.62 750.29,-928.62"/>
+<text text-anchor="start" x="756.94" y="-934.82" font-family="Arial" font-size="12.00">dept_email</text>
+<polygon fill="none" stroke="black" points="750.29,-908.62 750.29,-928.62 822.29,-928.62 822.29,-908.62 750.29,-908.62"/>
+<text text-anchor="start" x="759.93" y="-914.82" font-family="Arial" font-size="12.00">dept_type</text>
+<polygon fill="none" stroke="black" points="750.29,-888.62 750.29,-908.62 822.29,-908.62 822.29,-888.62 750.29,-888.62"/>
+<text text-anchor="start" x="768.27" y="-894.82" font-family="Arial" font-size="12.00">uga_id</text>
+</g>
+<!-- Course_Dept -->
+<g id="node8" class="node" pointer-events="visible" data-name="Course_Dept">
+
+<polygon fill="none" stroke="black" points="997.17,-793.89 891.81,-775.89 997.17,-757.89 1102.53,-775.89 997.17,-793.89"/>
+<text text-anchor="middle" x="997.17" y="-772.29" font-family="Arial" font-size="12.00">Course_Dept_Map</text>
+</g>
+<!-- Department&#45;&gt;Course_Dept -->
+<g id="edge13" class="edge" data-name="Department-&gt;Course_Dept">
+
+<path fill="none" stroke="black" d="M830.24,-920.54C876.47,-880.48 946.94,-819.41 979.52,-791.19"/>
+</g>
+<!-- Student -->
+<g id="node2" class="node" pointer-events="visible" data-name="Student">
+
+<polygon fill="#32cd32" stroke="none" points="215.28,-203.91 215.28,-223.91 297.28,-223.91 297.28,-203.91 215.28,-203.91"/>
+<polygon fill="none" stroke="black" points="215.28,-203.91 215.28,-223.91 297.28,-223.91 297.28,-203.91 215.28,-203.91"/>
+<text text-anchor="start" x="233.95" y="-211.11" font-family="Arial" font-weight="bold" font-size="12.00">Student</text>
+<polygon fill="none" stroke="black" points="215.28,-183.91 215.28,-203.91 297.28,-203.91 297.28,-183.91 215.28,-183.91"/>
+<text text-anchor="start" x="238.27" y="-191.11" font-family="Arial" text-decoration="underline" font-size="12.00">roll_no</text>
+<polygon fill="none" stroke="black" points="215.28,-163.91 215.28,-183.91 297.28,-183.91 297.28,-163.91 215.28,-163.91"/>
+<text text-anchor="start" x="241.27" y="-170.11" font-family="Arial" font-size="12.00">name</text>
+<polygon fill="none" stroke="black" points="215.28,-143.91 215.28,-163.91 297.28,-163.91 297.28,-143.91 215.28,-143.91"/>
+<text text-anchor="start" x="243.27" y="-150.11" font-family="Arial" font-size="12.00">cgpa</text>
+<polygon fill="none" stroke="black" points="215.28,-123.91 215.28,-143.91 297.28,-143.91 297.28,-123.91 215.28,-123.91"/>
+<text text-anchor="start" x="246.27" y="-130.11" font-family="Arial" font-size="12.00">dob</text>
+<polygon fill="none" stroke="black" points="215.28,-103.91 215.28,-123.91 297.28,-123.91 297.28,-103.91 215.28,-103.91"/>
+<text text-anchor="start" x="239.93" y="-110.11" font-family="Arial" font-size="12.00">net_id</text>
+<polygon fill="none" stroke="black" points="215.28,-83.91 215.28,-103.91 297.28,-103.91 297.28,-83.91 215.28,-83.91"/>
+<text text-anchor="start" x="223.93" y="-90.11" font-family="Arial" font-size="12.00">total_credits</text>
+<polygon fill="none" stroke="black" points="215.28,-63.91 215.28,-83.91 297.28,-83.91 297.28,-63.91 215.28,-63.91"/>
+<text text-anchor="start" x="236.6" y="-70.11" font-family="Arial" font-size="12.00">dept_id</text>
+<polygon fill="none" stroke="black" points="215.28,-43.91 215.28,-63.91 297.28,-63.91 297.28,-43.91 215.28,-43.91"/>
+<text text-anchor="start" x="218.26" y="-50.11" font-family="Arial" font-size="12.00">minor_dept_id</text>
+</g>
+<!-- Minor -->
+<g id="node5" class="node" pointer-events="visible" data-name="Minor">
+
+<polygon fill="none" stroke="black" points="105.43,-386.65 37.99,-368.65 105.43,-350.65 172.86,-368.65 105.43,-386.65"/>
+<text text-anchor="middle" x="105.43" y="-365.05" font-family="Arial" font-size="12.00">Minoring in</text>
+</g>
+<!-- Student&#45;&gt;Minor -->
+<g id="edge5" class="edge" data-name="Student-&gt;Minor">
+
+<path fill="none" stroke="black" d="M207.3,-210.13C174.44,-261.26 133.9,-324.34 115.44,-353.07"/>
+</g>
+<!-- Major -->
+<g id="node6" class="node" pointer-events="visible" data-name="Major">
+
+<polygon fill="none" stroke="black" points="786.29,-75.71 718.85,-57.71 786.29,-39.71 853.72,-57.71 786.29,-75.71"/>
+<text text-anchor="middle" x="786.29" y="-54.11" font-family="Arial" font-size="12.00">Majoring in</text>
+</g>
+<!-- Student&#45;&gt;Major -->
+<g id="edge7" class="edge" data-name="Student-&gt;Major">
+
+<path fill="none" stroke="black" d="M305.19,-126.88C407.44,-112.18 642.5,-78.38 741.27,-64.18"/>
+</g>
+<!-- Enrolled -->
+<g id="node11" class="node" pointer-events="visible" data-name="Enrolled">
+
+<polygon fill="none" stroke="black" points="997.17,-258.44 931.33,-240.44 997.17,-222.44 1063,-240.44 997.17,-258.44"/>
+<text text-anchor="middle" x="997.17" y="-236.84" font-family="Arial" font-size="12.00">Enrolled in</text>
+</g>
+<!-- Student&#45;&gt;Enrolled -->
+<g id="edge1" class="edge" data-name="Student-&gt;Enrolled">
+
+<path fill="none" stroke="black" d="M305.18,-140.94C441.3,-160.52 823.13,-215.41 953.16,-234.11" stroke-width="2"/>
+</g>
+<!-- Completed -->
+<g id="node12" class="node" pointer-events="visible" data-name="Completed">
+
+<polygon fill="none" stroke="black" points="510.1,-36 443.36,-18 510.1,0 576.84,-18 510.1,-36"/>
+<text text-anchor="middle" x="510.1" y="-14.4" font-family="Arial" font-size="12.00">Completed</text>
+</g>
+<!-- Student&#45;&gt;Completed -->
+<g id="edge3" class="edge" data-name="Student-&gt;Completed">
+
+<path fill="none" stroke="black" d="M305.22,-111.56C358.95,-87.03 443.13,-48.58 484.88,-29.52"/>
+</g>
+<!-- Course -->
+<g id="node3" class="node" pointer-events="visible" data-name="Course">
+
+<polygon fill="#ffd700" stroke="none" points="1018.78,-588.17 1018.78,-608.17 1133.78,-608.17 1133.78,-588.17 1018.78,-588.17"/>
+<polygon fill="none" stroke="black" points="1018.78,-588.17 1018.78,-608.17 1133.78,-608.17 1133.78,-588.17 1018.78,-588.17"/>
+<text text-anchor="start" x="1055.61" y="-595.37" font-family="Arial" font-weight="bold" font-size="12.00">Course</text>
+<polygon fill="none" stroke="black" points="1018.78,-568.17 1018.78,-588.17 1133.78,-588.17 1133.78,-568.17 1018.78,-568.17"/>
+<text text-anchor="start" x="1050.26" y="-575.37" font-family="Arial" text-decoration="underline" font-size="12.00">course_id</text>
+<polygon fill="none" stroke="black" points="1018.78,-548.17 1018.78,-568.17 1133.78,-568.17 1133.78,-548.17 1018.78,-548.17"/>
+<text text-anchor="start" x="1039.92" y="-554.37" font-family="Arial" font-size="12.00">course_name</text>
+<polygon fill="none" stroke="black" points="1018.78,-528.17 1018.78,-548.17 1133.78,-548.17 1133.78,-528.17 1018.78,-528.17"/>
+<text text-anchor="start" x="1042.26" y="-534.37" font-family="Arial" font-size="12.00">course_desc</text>
+<polygon fill="none" stroke="black" points="1018.78,-508.17 1018.78,-528.17 1133.78,-528.17 1133.78,-508.17 1018.78,-508.17"/>
+<text text-anchor="start" x="1037.26" y="-514.37" font-family="Arial" font-size="12.00">course_credits</text>
+<polygon fill="none" stroke="black" points="1018.78,-488.17 1018.78,-508.17 1133.78,-508.17 1133.78,-488.17 1018.78,-488.17"/>
+<text text-anchor="start" x="1033.59" y="-494.37" font-family="Arial" font-size="12.00">course_medium</text>
+<polygon fill="none" stroke="black" points="1018.78,-468.17 1018.78,-488.17 1133.78,-488.17 1133.78,-468.17 1018.78,-468.17"/>
+<text text-anchor="start" x="1056.59" y="-474.37" font-family="Arial" font-size="12.00">dept_id</text>
+<polygon fill="none" stroke="black" points="1018.78,-448.17 1018.78,-468.17 1133.78,-468.17 1133.78,-448.17 1018.78,-448.17"/>
+<text text-anchor="start" x="1021.58" y="-454.37" font-family="Arial" font-size="12.00">offered_in_semester</text>
+<polygon fill="none" stroke="black" points="1018.78,-428.17 1018.78,-448.17 1133.78,-448.17 1133.78,-428.17 1018.78,-428.17"/>
+<text text-anchor="start" x="1033.58" y="-434.37" font-family="Arial" font-size="12.00">offered_as_uwe</text>
+<polygon fill="none" stroke="black" points="1018.78,-408.17 1018.78,-428.17 1133.78,-428.17 1133.78,-408.17 1018.78,-408.17"/>
+<text text-anchor="start" x="1036.25" y="-414.37" font-family="Arial" font-size="12.00">offered_as_me</text>
+</g>
+<!-- Prerequisite -->
+<g id="node9" class="node" pointer-events="visible" data-name="Prerequisite">
+
+<polygon fill="none" stroke="black" points="1223.68,-526.17 1147.88,-508.17 1223.68,-490.17 1299.47,-508.17 1223.68,-526.17"/>
+<text text-anchor="middle" x="1223.68" y="-504.57" font-family="Arial" font-size="12.00">Pre-requisite</text>
+</g>
+<!-- Course&#45;&gt;Prerequisite -->
+<g id="edge9" class="edge" data-name="Course-&gt;Prerequisite">
+
+<path fill="none" stroke="black" d="M1141.08,-514.87C1151.76,-514.98 1162.68,-514.89 1172.94,-514.61"/>
+</g>
+<!-- Faculty -->
+<g id="node4" class="node" pointer-events="visible" data-name="Faculty">
+
+<polygon fill="#dc143c" stroke="none" points="216.28,-942.42 216.28,-962.42 296.28,-962.42 296.28,-942.42 216.28,-942.42"/>
+<polygon fill="none" stroke="black" points="216.28,-942.42 216.28,-962.42 296.28,-962.42 296.28,-942.42 216.28,-942.42"/>
+<text text-anchor="start" x="235.28" y="-949.62" font-family="Arial" font-weight="bold" font-size="12.00">Faculty</text>
+<polygon fill="none" stroke="black" points="216.28,-922.42 216.28,-942.42 296.28,-942.42 296.28,-922.42 216.28,-922.42"/>
+<text text-anchor="start" x="230.93" y="-929.62" font-family="Arial" text-decoration="underline" font-size="12.00">faculty_id</text>
+<polygon fill="none" stroke="black" points="216.28,-902.42 216.28,-922.42 296.28,-922.42 296.28,-902.42 216.28,-902.42"/>
+<text text-anchor="start" x="220.59" y="-908.62" font-family="Arial" font-size="12.00">faculty_name</text>
+<polygon fill="none" stroke="black" points="216.28,-882.42 216.28,-902.42 296.28,-902.42 296.28,-882.42 216.28,-882.42"/>
+<text text-anchor="start" x="221.27" y="-888.62" font-family="Arial" font-size="12.00">faculty_email</text>
+<polygon fill="none" stroke="black" points="216.28,-862.42 216.28,-882.42 296.28,-882.42 296.28,-862.42 216.28,-862.42"/>
+<text text-anchor="start" x="218.92" y="-868.62" font-family="Arial" font-size="12.00">faculty_phone</text>
+<polygon fill="none" stroke="black" points="216.28,-842.42 216.28,-862.42 296.28,-862.42 296.28,-842.42 216.28,-842.42"/>
+<text text-anchor="start" x="224.26" y="-848.62" font-family="Arial" font-size="12.00">faculty_type</text>
+<polygon fill="none" stroke="black" points="216.28,-822.42 216.28,-842.42 296.28,-842.42 296.28,-822.42 216.28,-822.42"/>
+<text text-anchor="start" x="227.27" y="-828.62" font-family="Arial" font-size="12.00">faculty_res</text>
+<polygon fill="none" stroke="black" points="216.28,-802.42 216.28,-822.42 296.28,-822.42 296.28,-802.42 216.28,-802.42"/>
+<text text-anchor="start" x="236.6" y="-808.62" font-family="Arial" font-size="12.00">dept_id</text>
+</g>
+<!-- Faculty_Dept -->
+<g id="node7" class="node" pointer-events="visible" data-name="Faculty_Dept">
+
+<polygon fill="none" stroke="black" points="105.43,-665.68 0.07,-647.68 105.43,-629.68 210.78,-647.68 105.43,-665.68"/>
+<text text-anchor="middle" x="105.43" y="-644.08" font-family="Arial" font-size="12.00">Faculty_Dept_Map</text>
+</g>
+<!-- Faculty&#45;&gt;Faculty_Dept -->
+<g id="edge11" class="edge" data-name="Faculty-&gt;Faculty_Dept">
+
+<path fill="none" stroke="black" d="M208.34,-807.82C175.56,-756.81 134.75,-693.31 115.88,-663.95" stroke-width="2"/>
+</g>
+<!-- Teaches -->
+<g id="node10" class="node" pointer-events="visible" data-name="Teaches">
+
+<polygon fill="none" stroke="black" points="510.1,-1016.33 454.05,-998.33 510.1,-980.33 566.15,-998.33 510.1,-1016.33"/>
+<text text-anchor="middle" x="510.1" y="-994.73" font-family="Arial" font-size="12.00">Teaches</text>
+</g>
+<!-- Faculty&#45;&gt;Teaches -->
+<g id="edge15" class="edge" data-name="Faculty-&gt;Teaches">
+
+<path fill="none" stroke="black" d="M304.02,-904.22C358.3,-929.01 444.76,-968.49 486.29,-987.46"/>
+</g>
+<!-- Minor&#45;&gt;Department -->
+<g id="edge6" class="edge" data-name="Minor-&gt;Department">
+
+<path fill="none" stroke="black" d="M121.58,-382.65C207.17,-456.81 608.67,-804.72 742.65,-920.81"/>
+</g>
+<!-- Major&#45;&gt;Department -->
+<g id="edge8" class="edge" data-name="Major-&gt;Department">
+
+<path fill="none" stroke="black" d="M786.29,-76.11C786.29,-179.63 786.29,-691.56 786.29,-884.7"/>
+</g>
+<!-- Faculty_Dept&#45;&gt;Department -->
+<g id="edge12" class="edge" data-name="Faculty_Dept-&gt;Department">
+
+<path fill="none" stroke="black" d="M134.68,-661.04C241.97,-710.04 614.22,-880.04 742.47,-938.61" stroke-width="2"/>
+</g>
+<!-- Course_Dept&#45;&gt;Course -->
+<g id="edge14" class="edge" data-name="Course_Dept-&gt;Course">
+
+<path fill="none" stroke="black" d="M1002.32,-758.33C1011.02,-728.72 1029.22,-666.74 1045.33,-611.88"/>
+</g>
+<!-- Prerequisite&#45;&gt;Course -->
+<g id="edge10" class="edge" data-name="Prerequisite-&gt;Course">
+
+<path fill="none" stroke="black" d="M1173.19,-501.73C1162.9,-501.45 1151.93,-501.35 1141.2,-501.46"/>
+</g>
+<!-- Teaches&#45;&gt;Course -->
+<g id="edge16" class="edge" data-name="Teaches-&gt;Course">
+
+<path fill="none" stroke="black" d="M525.52,-984.97C594.89,-924.86 880.25,-677.6 1010.46,-564.77" stroke-width="2"/>
+</g>
+<!-- Enrolled&#45;&gt;Course -->
+<g id="edge2" class="edge" data-name="Enrolled-&gt;Course">
+
+<path fill="none" stroke="black" d="M1002.08,-257.18C1010.67,-286.43 1029.04,-348.99 1045.29,-404.33"/>
+</g>
+<!-- Completed&#45;&gt;Course -->
+<g id="edge4" class="edge" data-name="Completed-&gt;Course">
+
+<path fill="none" stroke="black" d="M526.12,-31.88C596.51,-92.87 880.63,-339.07 1010.47,-451.57"/>
+</g>
+</g>
+</svg>

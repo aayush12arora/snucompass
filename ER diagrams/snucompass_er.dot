@@ -1,0 +1,104 @@
+digraph ER {
+    // Node styling
+    node [shape = plaintext; fontname = "Arial"; fontsize = 12;];
+    
+    // Entities
+    Department [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#6495ED"><b>Department</b></td></tr>
+        <tr><td PORT="dept_id"><u>dept_id</u></td></tr>
+        <tr><td>dept_name</td></tr>
+        <tr><td>dept_phone</td></tr>
+        <tr><td>dept_email</td></tr>
+        <tr><td>dept_type</td></tr>
+        <tr><td>uga_id</td></tr>
+        </table>
+        >;];
+    
+    Student [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#32CD32"><b>Student</b></td></tr>
+        <tr><td PORT="roll_no"><u>roll_no</u></td></tr>
+        <tr><td>name</td></tr>
+        <tr><td>cgpa</td></tr>
+        <tr><td>dob</td></tr>
+        <tr><td>net_id</td></tr>
+        <tr><td>total_credits</td></tr>
+        <tr><td>dept_id</td></tr>
+        <tr><td>minor_dept_id</td></tr>
+        </table>
+        >;];
+    
+    Course [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#FFD700"><b>Course</b></td></tr>
+        <tr><td PORT="course_id"><u>course_id</u></td></tr>
+        <tr><td>course_name</td></tr>
+        <tr><td>course_desc</td></tr>
+        <tr><td>course_credits</td></tr>
+        <tr><td>course_medium</td></tr>
+        <tr><td>dept_id</td></tr>
+        <tr><td>offered_in_semester</td></tr>
+        <tr><td>offered_as_uwe</td></tr>
+        <tr><td>offered_as_me</td></tr>
+        </table>
+        >;];
+    
+    Faculty [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#DC143C"><b>Faculty</b></td></tr>
+        <tr><td PORT="faculty_id"><u>faculty_id</u></td></tr>
+        <tr><td>faculty_name</td></tr>
+        <tr><td>faculty_email</td></tr>
+        <tr><td>faculty_phone</td></tr>
+        <tr><td>faculty_type</td></tr>
+        <tr><td>faculty_res</td></tr>
+        <tr><td>dept_id</td></tr>
+        </table>
+        >;];
+
+    Minor [label="Minoring in", shape=diamond]
+    Major [label="Majoring in", shape=diamond]
+    Faculty_Dept [label="Faculty_Dept_Map", shape=diamond]
+    Course_Dept [label="Course_Dept_Map", shape=diamond]
+    Prerequisite [label="Pre-requisite", shape=diamond]
+    Teaches [label="Teaches", shape=diamond]
+    Enrolled [label="Enrolled in", shape=diamond]
+    Completed [label="Completed", shape=diamond]
+
+    // Relationships
+    // Student -> Department [labeldistance = "2.5"; label = <<i>majoring in</i>>; arrowtail = Student; arrowhead = Department; ];
+    // Student:minor_dept_id -> Department:dept_id [labeldistance = "2.5"; label = <<i>minoring in</i>>; arrowtail = "none"; arrowhead = "none";];
+    // Course:dept_id -> Department:dept_id [labeldistance = "2.5"; label = <<i>belongs to</i>>; arrowtail = "none"; arrowhead = "none";];
+    // Faculty:dept_id -> Department:dept_id [labeldistance = "2.5"; label = <<i>belongs to</i>>; arrowtail = "none"; arrowhead = "none";];
+
+    Student -> Enrolled [labeldistance = "0"; arrowhead = "none"; style=bold];
+    Enrolled -> Course [labeldistance = "0"; arrowhead = "none";];
+
+    Student -> Completed [labeldistance = "0"; arrowhead = "none"];
+    Completed -> Course [labeldistance = "0"; arrowhead = "none";];
+
+    Student -> Minor [labeldistance = "0"; arrowhead = "none";];
+    Minor -> Department [labeldistance = "0"; arrowhead = "none";];
+
+    Student -> Major [labeldistance = "0"; arrowhead = "none";];
+    Major -> Department [labeldistance = "0"; arrowhead = "none";];
+
+    Course -> Prerequisite [labeldistance = "0"; arrowhead = "none";];
+    Prerequisite -> Course [labeldistance = "0"; arrowhead = "none";];
+
+    Faculty -> Faculty_Dept [labeldistance = "0"; arrowhead = "none"; style=bold];
+    Faculty_Dept -> Department [labeldistance = "0"; arrowhead = "none"; style=bold];
+    
+    Department -> Course_Dept [labeldistance = "0"; arrowhead = "none";];
+    Course_Dept -> Course [labeldistance = "0"; arrowhead = "none";];
+
+    Faculty -> Teaches [labeldistance = "0"; arrowhead = "none";];
+    Teaches -> Course [labeldistance = "0"; arrowhead = "none"; style=bold];
+
+    // Edge styling
+    edge [fontname = "Arial"; fontsize = 10; color = "#333333";];
+    
+    // Graph styling
+    graph [fontname = "Arial"; fontsize = 14;];
+}

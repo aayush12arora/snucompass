@@ -1,0 +1,70 @@
+digraph ER {
+  node [shape=none, margin=0, label=<
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+      <tr><td colspan="2"><b>department</b></td></tr>
+      <tr>
+        <td PORT="dept_id" bgcolor="#EEEEEE" align="left">dept_id</td>
+        <td align="right" bgcolor="#EEEEEE"><font point-size="10">VARCHAR(3) not null</font></td>
+      </tr>
+      <tr>
+        <td PORT="dept_name" align="left">dept_name</td>
+        <td align="right"><font point-size="10">VARCHAR(255) not null</font></td>
+      </tr>
+      <tr>
+        <td PORT="dept_phone" bgcolor="#EEEEEE" align="left">dept_phone</td>
+        <td align="right" bgcolor="#EEEEEE"><font point-size="10">VARCHAR(10)</font></td>
+      </tr>
+      <tr>
+        <td PORT="dept_email" align="left">dept_email</td>
+        <td align="right"><font point-size="10">VARCHAR(20)</font></td>
+      </tr>
+      <tr>
+        <td PORT="dept_type" bgcolor="#EEEEEE" align="left">dept_type</td>
+        <td align="right" bgcolor="#EEEEEE"><font point-size="10">VARCHAR(10)</font></td>
+      </tr>
+      <tr>
+        <td PORT="uga_id" align="left">uga_id</td>
+        <td align="right"><font point-size="10">INT not null</font></td>
+      </tr>
+    </table>
+  >];
+
+  // node [shape=none, margin=0, label=<
+  //   <table border="1" cellborder="0" cellspacing="0" cellpadding="4">
+  //     <tr><td colspan="2"><b>student</b></td></tr>
+  //     <tr>
+  //       <td PORT="roll_no" bgcolor="#EEEEEE" align="left">roll_no</td>
+  //       <td align="right" bgcolor="#EEEEEE"><font point-size="10">INT not null</font></td>
+  //     </tr>
+  //     <tr>
+  //       <td PORT="name" align="left">name</td>
+  //       <td align="right"><font point-size="10">VARCHAR(255) not null</font></td>
+  //     </tr>
+  //     <tr>
+  //       <td PORT="cgpa" bgcolor="#EEEEEE" align="left">cgpa</td>
+  //       <td align="right" bgcolor="#EEEEEE"><font point-size="10">DECIMAL(3, 2) not null</font></td>
+  //     </tr>
+  //     <!-- Add other student attributes here -->
+  //   </table>
+  // >];
+
+  // Repeat similar blocks for other tables (course, faculty, Student_Course_Map, etc.)
+
+  // Relationships
+  Department -> Faculty [label="uga_id"];
+  Student -> Department [label="dept_id"];
+  Student -> Department [label="minor_dept_id"];
+  Course -> Department [label="dept_id"];
+  Faculty -> Department [label="dept_id"];
+  Student_Course_Map -> Student [label="roll_no"];
+  Student_Course_Map -> Course [label="course_id"];
+  Student_Completed_Course -> Student [label="roll_no"];
+  Student_Completed_Course -> Course [label="course_id"];
+  Course_Faculty_Map -> Course [label="course_id"];
+  Course_Faculty_Map -> Faculty [label="faculty_id"];
+  Course_Pre_Req -> Course [label="course_id"];
+  Course_Pre_Req -> Course [label="pre_req_course_id"];
+  Minor_course_Map -> Department [label="dept_id"];
+  Minor_course_Map -> Course [label="course_id"];
+  Offered_Minors -> Department [label="dept_id"];
+}

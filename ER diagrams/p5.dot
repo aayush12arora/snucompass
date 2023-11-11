@@ -1,0 +1,51 @@
+digraph ER {
+    // Node styling
+    node [shape = plaintext; fontname = "Arial"; fontsize = 12;];
+    
+    // Entities
+    Customers [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#6495ED"><b>Customers</b></td></tr>
+        <tr><td PORT="customer_id"><u>customer_id</u></td></tr>
+        <tr><td>name</td></tr>
+        <tr><td>email</td></tr>
+        </table>
+        >;];
+    
+    Orders [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#32CD32"><b>Orders</b></td></tr>
+        <tr><td PORT="order_id"><u>order_id</u></td></tr>
+        <tr><td>order_date</td></tr>
+        </table>
+        >;];
+    
+    Products [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#FFD700"><b>Products</b></td></tr>
+        <tr><td PORT="product_id"><u>product_id</u></td></tr>
+        <tr><td>name</td></tr>
+        <tr><td>price</td></tr>
+        </table>
+        >;];
+    
+    Suppliers [label = <
+        <table border="0" cellborder="1" cellspacing="0">
+        <tr><td bgcolor="#DC143C"><b>Suppliers</b></td></tr>
+        <tr><td PORT="supplier_id"><u>supplier_id</u></td></tr>
+        <tr><td>company_name</td></tr>
+        </table>
+        >;];
+    
+    // Relationships
+    Customers:customer_id -> Orders:customer_id [dir = "both"; labeldistance = "2.5"; label = <<i>places</i>>; headlabel = <<i>places</i>>; arrowtail = "none"; arrowhead = "none";];
+    Orders:order_id -> Products:order_id [dir = "both"; labeldistance = "2.5"; label = <<i>contains</i>>; headlabel = <<i>contains</i>>; arrowtail = "none"; arrowhead = "none";];
+    Products:product_id -> Suppliers:product_id [dir = "both"; labeldistance = "2.5"; label = <<i>supplied by</i>>; headlabel = <<i>supplied by</i>>; arrowtail = "none"; arrowhead = "none";];
+    
+    
+    // Edge styling
+    edge [fontname = "Arial"; fontsize = 10; color = "#333333";];
+    
+    // Graph styling
+    graph [fontname = "Arial"; fontsize = 14;];
+}
