@@ -50,6 +50,9 @@ export async function getServerSideProps(context) {
 
         const studMinorData = await response.json();
         console.log(studMinorData)
+
+
+        
         return {
             props: {
                 studMinorData

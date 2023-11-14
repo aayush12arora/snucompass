@@ -15,7 +15,7 @@ function MinorProgressBar(props) {
     <Container>
       <Row>
         <Col><h2>
-        Pursuing Minor in {minorName}
+        Pursuing Minor in {minorName} Progress:
             </h2></Col>
       </Row>
       <Row>
