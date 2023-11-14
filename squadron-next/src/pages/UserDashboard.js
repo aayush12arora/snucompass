@@ -74,7 +74,7 @@ const UserDashboard = ({ studentData, minorEnrolledCourses,percentBar }) => {
                 {/* <h3>{studentData[0].minor_dept_id}</h3> */}
             </div>
 
-            <MinorProgressBar department={studentData[0].dept_name} percentage={percentBar.percentage}/>
+            <MinorProgressBar department={studentData[0].dept_name} percentage={percentBar?.percentage}/>
 
             
             <Container className="text-center" style={{marginTop:'4rem'}}>
