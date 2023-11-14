@@ -8,8 +8,8 @@ export default async function(req, res) {
         const {dept}=req.query;
       const results = await new Promise((resolve, reject) => {
         db.query(`select course.course_id,course.course_name,course.course_credits from course 
-        join minor_course_map on minor_course_map.dept_id=course.dept_id where course.dept_id=${dept}
-        and course.course_id=minor_course_map.course_id`, (error, results) => {
+        join Minor_course_Map on Minor_course_Map.dept_id=course.dept_id where course.dept_id=${dept}
+        and course.course_id=Minor_course_Map.course_id`, (error, results) => {
           if (error) {
             reject(error);
           } else {
