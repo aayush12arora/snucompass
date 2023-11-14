@@ -73,3 +73,5 @@ values(
         "M2023",
         "A"
     );
+use squadron;
+CALL enrollStudent(2110110543, "CSD205", "M2023", "UWE");

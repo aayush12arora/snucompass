@@ -3,7 +3,7 @@ import { useState } from 'react';
 import MinorProgressBar from './components/MinorProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap';
-
+import Table from 'react-bootstrap/Table';
 
 
 export async function getServerSideProps(context) {
@@ -45,11 +45,21 @@ export async function getServerSideProps(context) {
         console.log("check")
         console.log(percentBar)
 
+        const response4 = await fetch(`https://snucompass.vercel.app/api/GetCompletedCourses?rollNo=${rollNumber}&minorDep="${studentData[0].dept_id}"`);
+        if (!response4.ok) {
+            throw new Error(`Error fetching data: ${response2.statusText}`);
+        }
+
+        const CompletedList= await response4.json();
+        console.log("check")
+        console.log(CompletedList)
+
         return {
             props: {
                 studentData,
                 minorEnrolledCourses,
-                percentBar
+                percentBar,
+                CompletedList
             },
         };
     } catch (error) {
@@ -60,44 +70,67 @@ export async function getServerSideProps(context) {
     }
 }
 
-
-
-const UserDashboard = ({ studentData, minorEnrolledCourses,percentBar }) => {
+const UserDashboard = ({ studentData, minorEnrolledCourses, percentBar,CompletedList }) => {
     const router = useRouter();
-
+  
     return (
-        <>
-            <div>
-                <h1 style={{ textAlign: 'center' }}>User Dashboard</h1>
-
-                <h2 style={{ textAlign: 'center' }}> Welcome {studentData[0].name}</h2>
-                {/* <h3>{studentData[0].minor_dept_id}</h3> */}
-            </div>
-
-            <MinorProgressBar department={studentData[0].dept_name} percentage={percentBar?.percentage}/>
-
-            
-            <Container className="text-center" style={{marginTop:'4rem'}}>
-                <Row>
-                    <Col>
-                        <h3>Completed Courses</h3>
-                        {/* Add your completed courses component here */}
-                        
-                    </Col>
-                    <Col>
-                        <h3>Ongoing Courses</h3>
-                        <div>
-                            {minorEnrolledCourses.map(course => (
-                                <p key={course.course_id}>{course.course_name}</p>
-                            ))}
-                        </div>
-                        {/* {minorEnrolledCourses[0].course_name} */}
-                    </Col>
-                </Row>
-            </Container>
-        </>
+      <>
+        <div>
+          <h1 style={{ textAlign: 'center' }}>User Dashboard</h1>
+  
+          <h2 style={{ textAlign: 'center' }}> Welcome {studentData[0].name}</h2>
+          {/* <h3>{studentData[0].minor_dept_id}</h3> */}
+        </div>
+  
+        <MinorProgressBar department={studentData[0].dept_name} percentage={percentBar?.percentage} />
+  
+        <Container className="text-center" style={{ marginTop: '4rem' }}>
+          <Row>
+            <Col>
+              <h3>Completed Courses</h3>
+              {/* Add your completed courses component here */}
+              <Table striped bordered hover responsive>
+                <thead>
+                  <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Semester</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {CompletedList?.map((course) => (
+                    <tr key={course.course_id}>
+                      <td>{course.course_id}</td>
+                      <td>{course.course_name}</td>
+                      <td>{course.semester}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Col>
+            <Col>
+              <h3>Ongoing Courses</h3>
+              <Table striped bordered hover responsive>
+                <thead>
+                  <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {minorEnrolledCourses.map((course) => (
+                    <tr key={course.course_id}>
+                      <td>{course.course_id}</td>
+                      <td>{course.course_name}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Col>
+          </Row>
+        </Container>
+      </>
     );
-};
-
-export default UserDashboard;
-
+  };
+  
+  export default UserDashboard;
