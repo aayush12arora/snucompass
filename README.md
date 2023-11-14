@@ -1,4 +1,4 @@
-# SNUCOMPASS: SNU College Options and Major Preferences Assessment Support System 😊
+# SNUCOMPASS: SNU College Options and Minor Preferences Assessment Support System 😊
 # Team: Squadron
 
 Team Members:
