@@ -29,7 +29,7 @@ export default function Home() {
           <h3 className="text-black"> For info related to Minors and Specialization</h3>
 
           <div className="row mt-5">
-            <div className="col-md-6">
+            <div className="col-md-6" style={{marginBottom:'20px'}}>
               <Card>
                 <Card.Body>
                   <Card.Title>Minors</Card.Title>
