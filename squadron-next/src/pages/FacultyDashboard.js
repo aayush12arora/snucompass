@@ -43,7 +43,7 @@ export async function getServerSideProps(context) {
     const{auth_user}=context.query
 
     try {
-        const response = await fetch(`https://sqaudron.vercel.app/api/GetMinorStudents?fac_email=${auth_user}`);
+        const response = await fetch(`https://snucompass.vercel.app/api/GetMinorStudents?fac_email=${auth_user}`);
         if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
         }

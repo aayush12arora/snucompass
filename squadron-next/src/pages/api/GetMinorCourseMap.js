@@ -1,15 +1,15 @@
+// 
+
 import db from './db.js';
-import middleware from '@/cors.js';
-//add dept_id to select query to fetch stuff later
+
 export default async function(req, res) {
-   
-    
   try {
-    await middleware(req, res); // Add this line to enable CORS
     if (req.method === 'GET') {
+        const {dept}=req.query;
       const results = await new Promise((resolve, reject) => {
-        db.query(`SELECT department.dept_id,department.dept_name,minor_description,credits 
-        FROM offered_minors join department on department.dept_id=offered_minors.dept_id`, (error, results) => {
+        db.query(`select course.course_id,course.course_name,course.course_credits from course 
+        join minor_course_map on minor_course_map.dept_id=course.dept_id where course.dept_id=${dept}
+        and course.course_id=minor_course_map.course_id`, (error, results) => {
           if (error) {
             reject(error);
           } else {

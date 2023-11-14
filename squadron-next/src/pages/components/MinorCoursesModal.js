@@ -1,22 +1,28 @@
+// StudentDetailsModal.js
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
-function StudentDetailsModal({ student, show, onHide }) {
-  const [completedCourses, setCompletedCourses] = useState([]);
+function StudentDetailsModal({ minor, show, onHide }) {
+  const [Courses, setCompletedCourses] = useState([]);
   const [isFetchingData, setIsFetchingData] = useState(false);
 
   useEffect(() => {
-    if (show && student && student?.roll_no) {
+   
+    if (show && minor) {
       setIsFetchingData(true);
-        console.log("hai")
+      console.log(minor)
       const fetchCompletedCourses = async () => {
         try {
-          const response = await fetch(`https://snucompass.vercel.app/api/GetCompletedCourses?rollNo=${student?.roll_no}&minorDep="${student?.dept_id}"`);
+            console.log("namaste")
+            console.log(minor)
+          const response = await fetch(`https://snucompass.vercel.app/api/GetMinorCourseMap?dept="${minor}"`);
           if (!response.ok) {
             throw new Error(`Error fetching data: ${response.statusText}`);
           }
           const coursesData = await response.json();
+          console.log(coursesData)
           setCompletedCourses(coursesData);
         } catch (error) {
           console.error('Error:', error);
@@ -27,23 +33,36 @@ function StudentDetailsModal({ student, show, onHide }) {
 
       fetchCompletedCourses();
     }
-  }, [show, student]);
+  }, [show, minor]);
 
   return (
     <Modal show={show} onHide={onHide} size="lg" centered>
       <Modal.Header closeButton>
-        <Modal.Title>{student?.name}'s Details</Modal.Title>
+        <Modal.Title>{minor}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Completed Courses:</h4>
+        <h4>Offered Minor Courses List:</h4>
         {isFetchingData ? (
           <p>Loading...</p>
         ) : (
-          <ul>
-            {completedCourses?.map((course) => (
-              <li key={course?.course_id}>{course?.course_name}</li>
-            ))}
-          </ul>
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th>Course ID</th>
+                <th>Course Name</th>
+                <th>Course Credits</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Courses?.map((course) => (
+                <tr key={course?.course_id}>
+                  <td>{course?.course_id}</td>
+                  <td>{course?.course_name}</td>
+                  <td>{course?.course_credits}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         )}
       </Modal.Body>
       <Modal.Footer>
