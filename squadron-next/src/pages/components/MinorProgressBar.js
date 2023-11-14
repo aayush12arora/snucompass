@@ -20,7 +20,7 @@ function MinorProgressBar(props) {
       </Row>
       <Row>
         <Col>
-          <ProgressBar now={25} label={`${25}%`} />
+          <ProgressBar now={props.percentage.toFixed(2)} label={`${props.percentage.toFixed(2)}%`} />
         </Col>
       </Row>
     </Container>

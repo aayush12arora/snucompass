@@ -43,6 +43,8 @@ const SignIn = () => {
         { username: '2110110017', password: '456' },
         { username: '2110110842', password: '789' },
         { username: '2110110883', password: '012' },
+        { username: '2110110414', password: '414' },
+        { username: '2110110543', password: '543' },
     ];
 
     return (

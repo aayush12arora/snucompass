@@ -34,3 +34,42 @@ call insertIntoMinorMap('DES', 'DES102');
 call insertIntoMinorMap('DES', 'DES121');
 call insertIntoMinorMap('DES', 'DES211');
 call insertIntoMinorMap('DES', 'DES502');
+use squadron;
+call insertIntoStudent(
+    2110110543,
+    "Vijay Varma",
+    9.24,
+    "2001-10-05",
+    "vv712",
+    60,
+    "ECE",
+    "CSD"
+);
+insert into Student_Completed_Course
+values(
+        2110110543,
+        "CSD101",
+        "M2023",
+        "A-"
+    );
+insert into Student_Completed_Course
+values(
+        2110110543,
+        "CSD102",
+        "M2023",
+        "A-"
+    );
+insert into Student_Completed_Course
+values(
+        2110110543,
+        "CSD204",
+        "M2023",
+        "A"
+    );
+insert into Student_Completed_Course
+values(
+        2110110543,
+        "CSD311",
+        "M2023",
+        "A"
+    );

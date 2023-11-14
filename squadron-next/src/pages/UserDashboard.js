@@ -34,10 +34,22 @@ export async function getServerSideProps(context) {
         const minorEnrolledCourses = await response2.json();
         console.log("check")
         console.log(minorEnrolledCourses)
+
+
+        const response3 = await fetch(`https://snucompass.vercel.app/api/GetProgressPercent?rollNo=${rollNumber}&minorDep="${studentData[0].dept_id}"`);
+        if (!response3.ok) {
+            throw new Error(`Error fetching data: ${response2.statusText}`);
+        }
+
+        const percentBar = await response3.json();
+        console.log("check")
+        console.log(percentBar)
+
         return {
             props: {
                 studentData,
-                minorEnrolledCourses
+                minorEnrolledCourses,
+                percentBar
             },
         };
     } catch (error) {
@@ -50,7 +62,7 @@ export async function getServerSideProps(context) {
 
 
 
-const UserDashboard = ({ studentData, minorEnrolledCourses }) => {
+const UserDashboard = ({ studentData, minorEnrolledCourses,percentBar }) => {
     const router = useRouter();
 
     return (
@@ -62,7 +74,7 @@ const UserDashboard = ({ studentData, minorEnrolledCourses }) => {
                 {/* <h3>{studentData[0].minor_dept_id}</h3> */}
             </div>
 
-            <MinorProgressBar department={studentData[0].dept_name} />
+            <MinorProgressBar department={studentData[0].dept_name} percentage={percentBar.percentage}/>
 
             
             <Container className="text-center" style={{marginTop:'4rem'}}>
