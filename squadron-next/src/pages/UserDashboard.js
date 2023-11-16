@@ -4,7 +4,7 @@ import MinorProgressBar from './components/MinorProgressBar';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
-
+import DynamicMinorInfo from './components/DynamicMinorInfo';
 
 export async function getServerSideProps(context) {
     const { rollNumber } = context.query;
@@ -88,6 +88,8 @@ const UserDashboard = ({ studentData, minorEnrolledCourses, percentBar,Completed
           <h1 style={{ textAlign: 'center' }}>User Dashboard</h1>
           <h2 style={{ textAlign: 'center' }}> Welcome {studentData[0].name}</h2>
           <p style={{ textAlign: 'center' }}>You are not pursuing a minor in any department.</p>
+
+          <DynamicMinorInfo />
         </div>
       );
     }
