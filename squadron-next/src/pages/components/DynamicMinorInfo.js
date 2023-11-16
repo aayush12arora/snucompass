@@ -2,13 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import MinorCoursesModal from './MinorCoursesModal';
+import DynamicMinorModal from './DynamicMinorModal';
 
-const DynamicMinorInfo = () => {
+const DynamicMinorInfo = ({rollNumber}) => {
   const [expandedCard, setExpandedCard] = useState(null);
   const [modalShow, setModalShow] = useState(false);
+  const [dynmodalShow, dynsetModalShow] = useState(false);
   const [minorData, setMinorData] = useState([]);
-
+  const[studRollNum,setRollNum]=useState(0);
+  const[studData,setStudData]=useState({});
   useEffect(() => {
+    console.log("rollNumberrrr: " + rollNumber);
+    setRollNum(rollNumber);
     const fetchData = async () => {
       try {
         const response = await fetch('https://snucompass.vercel.app/api/GetMinorDep');
@@ -42,6 +47,21 @@ const DynamicMinorInfo = () => {
     setModalShow(false);
   };
 
+
+  const openDynamicModal = (dept_id) => {
+    setStudData({
+      roll_no:studRollNum,
+      dept_id:dept_id
+    });
+    dynsetModalShow(true);
+  };
+
+  const closeDynamicModal = () => {
+    setSelectedMinor({});
+    dynsetModalShow(false);
+  };
+
+
   return (
     <div>
       <h1>Your Progress in Minor Departments</h1>
@@ -60,15 +80,17 @@ const DynamicMinorInfo = () => {
                     <Card.Text>{minor.minor_description}</Card.Text>
                   </div>
 
-                  {minor.minor_description.length > 100 && (
-                    <Button variant="primary" style={{ marginRight: '20px' }} onClick={() => toggleExpand(index)}>
-                      {isExpanded ? 'Read Less' : 'Read More'}
-                    </Button>
-                  )}
+                  {/* <div style={{ display: 'flex', flexWrap: 'wrap' ,justifyContent:'space-evenly'}}> */}
+                    {minor.minor_description.length > 100 && (
+                      <Button variant="primary"  onClick={() => toggleExpand(index)} style={{marginRight:"20px"}}>
+                        {isExpanded ? 'Read Less' : 'Read More'}
+                      </Button>
+                    )}
 
-                  <Button variant="primary" onClick={() => openModal(minor)}>
-                    Courses
-                  </Button>
+                    <Button variant='primary' onClick={()=>openDynamicModal(minor.dept_id)}>Your Progress</Button>
+
+                    
+                  {/* </div> */}
                 </Card.Body>
               </Card>
             </div>
@@ -76,8 +98,8 @@ const DynamicMinorInfo = () => {
         })}
       </div>
 
-      {selectedMinor && modalShow && (
-        <MinorCoursesModal minor={selectedMinor} show={modalShow} onHide={closeModal} />
+      {studData && dynmodalShow && (
+        <DynamicMinorModal student={studData} show={dynmodalShow} onHide={closeDynamicModal} />
       )}
     </div>
   );

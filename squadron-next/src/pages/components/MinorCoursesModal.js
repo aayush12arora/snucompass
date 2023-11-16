@@ -1,10 +1,10 @@
-// StudentDetailsModal.js
+
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 
-function StudentDetailsModal({ minor, show, onHide }) {
+function  MinorCoursesModal({ minor, show, onHide }) {
   const [Courses, setCompletedCourses] = useState([]);
   const [isFetchingData, setIsFetchingData] = useState(false);
 
@@ -74,4 +74,4 @@ function StudentDetailsModal({ minor, show, onHide }) {
   );
 }
 
-export default StudentDetailsModal;
+export default MinorCoursesModal;

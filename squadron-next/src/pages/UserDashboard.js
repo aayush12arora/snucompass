@@ -81,6 +81,8 @@ export async function getServerSideProps(context) {
 
 const UserDashboard = ({ studentData, minorEnrolledCourses, percentBar,CompletedList }) => {
     const router = useRouter();
+    const { rollNumber } = router.query;
+  
     if (studentData[0]?.dept_name ===null || studentData[0]?.dept_id===null) {
       console.log("null hai bhai")
       return (
@@ -89,7 +91,7 @@ const UserDashboard = ({ studentData, minorEnrolledCourses, percentBar,Completed
           <h2 style={{ textAlign: 'center' }}> Welcome {studentData[0].name}</h2>
           <p style={{ textAlign: 'center' }}>You are not pursuing a minor in any department.</p>
 
-          <DynamicMinorInfo />
+          <DynamicMinorInfo  rollNumber={rollNumber} />
         </div>
       );
     }

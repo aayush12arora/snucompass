@@ -9,3 +9,32 @@ call insertIntoStudent(
     "CSD",
     NULL
 );
+use squadron;
+insert into Student_Completed_Course
+values(
+        2110110112,
+        "CSD102",
+        "S2023",
+        "A-"
+    );
+insert into Student_Completed_Course
+values(
+        2110110112,
+        "COM192",
+        "S2023",
+        "A"
+    );
+insert into Student_Completed_Course
+values(
+        2110110112,
+        "COM199",
+        "M2023",
+        "A-"
+    );
+insert into Student_Completed_Course
+values(
+        2110110112,
+        "DES211",
+        "S2023",
+        "C"
+    );
