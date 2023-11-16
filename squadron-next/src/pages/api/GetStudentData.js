@@ -11,7 +11,7 @@ export default async function(req, res) {
     const { rollNo } = req.query;
       const results = await new Promise((resolve, reject) => {
         db.query(`SELECT name,department.dept_id,department.dept_name from student
-        JOIN department on department.dept_id=student.minor_dept_id
+        LEFT JOIN department on department.dept_id=student.minor_dept_id
         WHERE student.roll_no=${rollNo}
         `, (error, results) => {
           if (error) {

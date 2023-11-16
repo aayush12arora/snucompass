@@ -25,7 +25,16 @@ export async function getServerSideProps(context) {
         // }
 
         const studentData = await response.json();
-        console.log(studentData)
+        console.log(studentData[0])
+        if (studentData[0]?.dept_id === null) {
+          console.log("Dept_id is null. Exiting early.");
+          return {
+            props: {
+              
+              studentData
+            }
+          };
+      }
         const response2 = await fetch(`https://snucompass.vercel.app/api/GetEnrolledMinorCourses?dept="${studentData[0].dept_id}"&rollNo=${rollNumber}`);
         if (!response2.ok) {
             throw new Error(`Error fetching data: ${response2.statusText}`);
@@ -72,6 +81,16 @@ export async function getServerSideProps(context) {
 
 const UserDashboard = ({ studentData, minorEnrolledCourses, percentBar,CompletedList }) => {
     const router = useRouter();
+    if (studentData[0]?.dept_name ===null || studentData[0]?.dept_id===null) {
+      console.log("null hai bhai")
+      return (
+        <div>
+          <h1 style={{ textAlign: 'center' }}>User Dashboard</h1>
+          <h2 style={{ textAlign: 'center' }}> Welcome {studentData[0].name}</h2>
+          <p style={{ textAlign: 'center' }}>You are not pursuing a minor in any department.</p>
+        </div>
+      );
+    }
   
     return (
       <>
