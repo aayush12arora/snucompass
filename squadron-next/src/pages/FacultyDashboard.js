@@ -101,9 +101,14 @@ const FacultyDashboard = ({studMinorData}) => {
                 <h1 style={{ textAlign: 'center' }}>Teacher Dashboard</h1>
 
                 <h2 style={{ textAlign: 'center' }}> Welcome {studMinorData[0]?.faculty_name}</h2>
-                <Button variant="primary" onClick={openAddCourseModal}>
-          Add Course
-        </Button>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <Button variant="primary" onClick={openAddCourseModal}>
+                    Add Course
+                  </Button>
+                </div>
+                {/* <Button variant="primary" onClick={openAddCourseModal} > */}
+          {/* Add Course
+        </Button> */}
                 <h3 style={{ textAlign: 'center' }}> Students currently pursuing minor in {studMinorData[0]?.dept_id}</h3>
 
 

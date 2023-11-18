@@ -9,6 +9,7 @@ function MinorProgressBar(props) {
     const[minorName,SetMinorName]=useState('');
 
     useEffect(()=>{
+      console.log(props.percentage)
         SetMinorName(props.department);
     })
   return (
@@ -20,7 +21,16 @@ function MinorProgressBar(props) {
       </Row>
       <Row>
         <Col>
-          <ProgressBar now={props.percentage?.toFixed(2)} label={`${props.percentage?.toFixed(2)}%`} />
+        {/* {props.percentage !== undefined && (
+            <ProgressBar now={props.percentage?.toFixed(2)} label={`${props.percentage?.toFixed(2)}%`} />
+          ):(
+            <ProgressBar now={0} label={`0%`} />
+          )} */}
+              {props.percentage!==null? (
+        <ProgressBar now={props.percentage?.toFixed(2)} label={`${props.percentage?.toFixed(2)}%`} />
+      ) : (
+        <ProgressBar now={3} label={`0%`} />
+      )}
         </Col>
       </Row>
     </Container>

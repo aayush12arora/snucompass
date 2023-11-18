@@ -17,6 +17,8 @@ export default function AddCourseModal({ show, onHide, addCourse }) {
     Me: 0,
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
@@ -31,6 +33,8 @@ export default function AddCourseModal({ show, onHide, addCourse }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     // Call your API endpoint here
     console.log( JSON.stringify(courseData))
     try {
@@ -53,6 +57,9 @@ export default function AddCourseModal({ show, onHide, addCourse }) {
     } catch (error) {
       console.error('Error:', error);
       // Handle error as needed
+    }finally {
+      // Stop loading regardless of success or error
+      setLoading(false);
     }
   };
 
@@ -77,6 +84,7 @@ export default function AddCourseModal({ show, onHide, addCourse }) {
 
           <Form.Group controlId="formCourseName">
             <Form.Label>Course Name</Form.Label>
+            
             <Form.Control
               type="text"
               placeholder="Enter Course Name"
@@ -169,7 +177,7 @@ export default function AddCourseModal({ show, onHide, addCourse }) {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Add Course
+            {loading ? 'Adding...' : 'Add Course'}
           </Button>
         </Form>
       </Modal.Body>
