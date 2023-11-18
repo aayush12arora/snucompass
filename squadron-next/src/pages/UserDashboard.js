@@ -17,8 +17,6 @@ export async function getServerSideProps(context) {
         }
 
         // console.log(studentData)
-
-        
         // if (deptName)
         // {
         //     const response2 = await fetch(`http://localhost:3000/api/GetEnrolledMinorCourses?dept=${deptName}`);

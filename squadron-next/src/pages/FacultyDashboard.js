@@ -7,6 +7,7 @@ import { ListGroup } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import StudentDetailsModal from './components/StudentDetailsModal';
+import AddCourseModal from './components/AddCourseModal';
 //REMEMBER TO CHANGE API ENDPOINT WHILE PUSHING TO PRODUCTION
 
 
@@ -75,6 +76,7 @@ const FacultyDashboard = ({studMinorData}) => {
     const router = useRouter();
     const [selectedStudent, setSelectedStudent] = useState(null);
     const [modalShow, setModalShow] = useState(false);
+    const [addCourseModalShow, setAddCourseModalShow] = useState(false);
 
     const openModal = (student) => {
         setSelectedStudent(student);
@@ -85,13 +87,23 @@ const FacultyDashboard = ({studMinorData}) => {
         setSelectedStudent(null);
         setModalShow(false);
       };
+
+      const openAddCourseModal = () => {
+        setAddCourseModalShow(true);
+      };
+    
+      const closeAddCourseModal = () => {
+        setAddCourseModalShow(false);
+      };
     return (
         <>
             <div>
                 <h1 style={{ textAlign: 'center' }}>Teacher Dashboard</h1>
 
                 <h2 style={{ textAlign: 'center' }}> Welcome {studMinorData[0]?.faculty_name}</h2>
-
+                <Button variant="primary" onClick={openAddCourseModal}>
+          Add Course
+        </Button>
                 <h3 style={{ textAlign: 'center' }}> Students currently pursuing minor in {studMinorData[0]?.dept_id}</h3>
 
 
@@ -112,6 +124,9 @@ const FacultyDashboard = ({studMinorData}) => {
                 {selectedStudent && modalShow && (
         <StudentDetailsModal student={selectedStudent} show={modalShow} onHide={closeModal} />
       )}
+
+      
+<AddCourseModal show={addCourseModalShow} onHide={closeAddCourseModal} />
             </div>
 
         </>
