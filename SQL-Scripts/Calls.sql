@@ -399,3 +399,112 @@ call insertIntoCourse(
     1,
     0
 );
+use sql12657494;
+-- need a trigger that whenever a row is deleted from student_course_map it goes to the completed course automatically
+-- alter table completed course that shows grade
+-- when uploading file you need to add delimiter vscode handles automatically
+call insertFaculty(
+    1,
+    "Sonia Khetarpaul",
+    "sonia.khetarpaul@snu.edu.in",
+    "9999999999",
+    "Assn.Prof",
+    "No",
+    "CSD"
+);
+call insertFaculty(
+    2,
+    "Ashwin Ramanathan",
+    "ashwin.ramanathan@snu.edu.in",
+    "9999999999",
+    "Assc.Prof",
+    "No",
+    "COM"
+);
+call insertFaculty(
+    3,
+    "Vikash Kumar",
+    "vikash.kumar@snu.edu.in",
+    "9999999999",
+    "Assc.Prof",
+    "No",
+    "COM"
+);
+update faculty
+set dept_id = "DES"
+where faculty_id = 3;
+use sql12657494;
+call insertIntoCourse (
+    "CSD317",
+    "Introduction to Database Management Systems",
+    "This course is an introduction to DBMS and SQL",
+    4,
+    "OFFLINE",
+    "CSD",
+    "BOTH",
+    1,
+    0
+);
+call insertIntoMinorMap('CSD', 'CSD101');
+call insertIntoMinorMap('CSD', 'CSD102');
+call insertIntoMinorMap('CSD', 'CSD204');
+call insertIntoMinorMap('CSD', 'CSD205');
+call insertIntoMinorMap('CSD', 'CSD311');
+call insertIntoMinorMap('CSD', 'CSD317');
+call insertIntoMinorMap('COM', 'COM191');
+call insertIntoMinorMap('COM', 'COM192');
+call insertIntoMinorMap('COM', 'COM198');
+call insertIntoMinorMap('COM', 'COM199');
+call insertIntoMinorMap('COM', 'COM195');
+call insertIntoMinorMap('DES', 'DES101');
+call insertIntoMinorMap('DES', 'DES102');
+call insertIntoMinorMap('DES', 'DES121');
+call insertIntoMinorMap('DES', 'DES211');
+call insertIntoMinorMap('DES', 'DES502');
+use squadron;
+call insertIntoStudent(
+    2110110543,
+    "Vijay Varma",
+    9.24,
+    "2001-10-05",
+    "vv712",
+    60,
+    "ECE",
+    "CSD"
+);
+use squadron;
+CALL enrollStudent(2110110543, "CSD205", "M2023", "UWE");
+use squadron;
+call insertIntoStudent(
+    2110110112,
+    "test",
+    8.6,
+    "2001-11-28",
+    "ms187",
+    60,
+    "CSD",
+    NULL
+);
+use squadron;
+call insertIntoCourse(
+    "DES121",
+    "Visual Communication Design",
+    "A good course on VCD that will expand horizons of students' knowledge in the field of Design.",
+    4,
+    "Offline",
+    "DES",
+    "Both",
+    1,
+    0
+);
+call insertIntoCourse (
+    "DES101",
+    "Elements and principles of Design",
+    "This course is an introduction to elements of design",
+    4,
+    "OFFLINE",
+    "DES",
+    "BOTH",
+    1,
+    0
+);
