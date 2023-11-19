@@ -21,16 +21,3 @@ npm install
 
 and finally:
 npm run dev
-
-run sql queries in this order
-Script.sql
-StoredProcedures.sql
-InsertStudents.sql
-InsertNewCourses.sql
-EnrollStudents.sql
-
-
-
-the following scripts are involved in data insertion:
-mitaaliscript
-RahulScript
