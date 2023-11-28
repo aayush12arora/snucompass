@@ -20,7 +20,11 @@ function DynamicMinorProgressBar(props) {
       </Row>
       <Row>
         <Col>
+          {props.percentage!==null? (
           <ProgressBar now={props.percentage?.toFixed(2)} label={`${props.percentage?.toFixed(2)}%`} />
+        ) : (
+          <ProgressBar now={3} label={`0%`} />
+        )}
         </Col>
       </Row>
     </Container>
