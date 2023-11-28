@@ -36,7 +36,7 @@ export default function Home() {
                   <Card.Text>
                     Minors are a great way to explore your interests and expand your knowledge.
                     You can choose a minor from any department except your major department.SNU offers a wide range of minors.
-                    Some of the popular minors are:Communication, Computer Science and Design.
+                    Popular Minors: Communication, Computer Science and Design.
                   </Card.Text>
                   
                   <Button variant="primary">
