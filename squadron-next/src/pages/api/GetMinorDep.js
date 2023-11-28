@@ -1,9 +1,7 @@
 import db from './db.js';
 import middleware from '@/cors.js';
 //add dept_id to select query to fetch stuff later
-export default async function(req, res) {
-   
-    
+export default async function(req, res) { 
   try {
     await middleware(req, res); // Add this line to enable CORS
     if (req.method === 'GET') {
