@@ -51,6 +51,7 @@ function  MinorCoursesModal({ minor, show, onHide }) {
                 <th>Course ID</th>
                 <th>Course Name</th>
                 <th>Course Credits</th>
+                <th>Course Mode</th>
               </tr>
             </thead>
             <tbody>
@@ -59,6 +60,7 @@ function  MinorCoursesModal({ minor, show, onHide }) {
                   <td>{course?.course_id}</td>
                   <td>{course?.course_name}</td>
                   <td>{course?.course_credits}</td>
+                  <td>{course?.course_medium}</td>
                 </tr>
               ))}
             </tbody>
