@@ -8,10 +8,10 @@ const mysql = require('mysql');
 // });
 
 const db = mysql.createConnection({
-  host: 'sql12.freesqldatabase.com',
-  user: 'sql12657494',
-  password: 'UqMfk6wVu4',
-  database: 'sql12657494',
+  host: 'sql6.freesqldatabase.com',
+  user: 'sql6686171',
+  password: '1BZ4MSklss',
+  database: 'sql6686171',
 });
 
 
