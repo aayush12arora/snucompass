@@ -9,9 +9,9 @@ const mysql = require('mysql');
 
 const db = mysql.createConnection({
   host: 'sql6.freesqldatabase.com',
-  user: 'sql6686171',
-  password: '1BZ4MSklss',
-  database: 'sql6686171',
+  user: 'sql6691121',
+  password: 'APBc1wiIiZ',
+  database: 'sql6691121',
 });
 
 
