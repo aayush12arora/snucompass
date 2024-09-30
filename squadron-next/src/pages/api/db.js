@@ -8,7 +8,7 @@ const mysql = require('mysql');
 // });
 
 const db = mysql.createConnection({
-  host: 'sql6.freesqldatabase.com',
+  host: 'sql12.freesqldatabase.com',
   user: 'sql12734420',
   password: 'wDtXAFVCnM',
   database: 'sql12734420',
